@@ -18,13 +18,22 @@
 
     <div id="dataset-info" style="display: none;">
         <h2>Dataset Information</h2>
-        <p id="dataset-description"></p>
-        <p>Number of samples: <span id="dataset-samples"></span></p>
-        <p>Number of features: <span id="dataset-features"></span></p>
-        <div class="dataset-actions">
-            <button id="copy-dataset-info" class="btn btn-primary"><i class="fas fa-copy"></i> Copy</button>
-            <a id="download-dataset" class="btn btn-success" href="#" download><i class="fas fa-download"></i> Download</a>
-        </div>
+        <p><strong>Name:</strong> <span id="dataset-name"></span></p>
+        <p><strong>Description:</strong> <span id="dataset-description"></span></p>
+        <p><strong>Number of samples:</strong> <span id="dataset-samples"></span></p>
+        <p><strong>Number of features:</strong> <span id="dataset-features"></span></p>
+        <p><strong>Features:</strong> <span id="dataset-feature-list"></span></p>
+        <p><strong>Target:</strong> <span id="dataset-target"></span></p>
+    </div>
+
+    <div id="sample-data" style="display: none;">
+        <h2>Sample Data</h2>
+        <table id="sample-data-table" class="table">
+            <thead>
+                <tr></tr>
+            </thead>
+            <tbody></tbody>
+        </table>
     </div>
 
     <div id="data-summary" style="display: none;">
@@ -33,11 +42,9 @@
             <thead>
                 <tr>
                     <th>Feature</th>
-                    <th>Mean</th>
-                    <th>Median</th>
-                    <th>Standard Deviation</th>
-                    <th>Min</th>
-                    <th>Max</th>
+                    <th>Description</th>
+                    <th>Data Type</th>
+                    <th>Missing Values</th>
                 </tr>
             </thead>
             <tbody></tbody>
@@ -71,6 +78,7 @@
         <ul id="module-list"></ul>
     </div>
 </div>
+
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 <script>
@@ -81,57 +89,131 @@
         });
 
         $('#load-dataset').click(function() {
-    var datasetUrl = $('#dataset-url').val();
-    if (datasetUrl !== '') {
-        // Make an API request to fetch dataset information and data
-        $.ajax({
-            url: '/api/datasets',
-            method: 'POST',
-            data: JSON.stringify({ url: datasetUrl }),
-            contentType: 'application/json',
-            success: function(response) {
-                // Update dataset information
-                $('#dataset-name').text(response.name);
-                $('#dataset-description').text(response.description);
-                $('#dataset-samples').text(response.num_samples);
-                $('#dataset-features').text(response.num_features);
+            var datasetUrl = $('#dataset-url').val();
+            if (datasetUrl !== '') {
+                // Make an API request to fetch dataset information and data
+                $.ajax({
+                    url: '/api/datasets',
+                    method: 'POST',
+                    data: JSON.stringify({ url: datasetUrl }),
+                    contentType: 'application/json',
+                    success: function(response) {
+                        // Update dataset information
+                        $('#dataset-name').text(response.name);
+                        $('#dataset-description').text(response.description);
+                        $('#dataset-samples').text(response.num_samples);
+                        $('#dataset-features').text(response.num_features);
+                        $('#dataset-feature-list').text(response.features.join(', '));
+                        $('#dataset-target').text(response.target);
+                        $('#dataset-info').show();
 
-                // Show the dataset information section
-                $('#dataset-info').show();
+                        // Update sample data table
+                        var sampleDataTable = $('#sample-data-table');
+                        var headerRow = sampleDataTable.find('thead tr');
+                        headerRow.empty();
+                        $.each(response.features, function(index, feature) {
+                            headerRow.append('<th>' + feature + '</th>');
+                        });
+                        headerRow.append('<th>' + response.target + '</th>');
 
-                // Update data summary table
-                var summaryTableBody = $('#summary-table tbody');
-                summaryTableBody.empty();
-                // Assuming the response contains summary data for each feature
-                $.each(response.summary, function(feature, values) {
-                    var row = '<tr>' +
-                        '<td>' + feature + '</td>' +
-                        '<td>' + values.mean.toFixed(2) + '</td>' +
-                        '<td>' + values.median.toFixed(2) + '</td>' +
-                        '<td>' + values.std.toFixed(2) + '</td>' +
-                        '<td>' + values.min.toFixed(2) + '</td>' +
-                        '<td>' + values.max.toFixed(2) + '</td>' +
-                        '</tr>';
-                    summaryTableBody.append(row);
+                        var tbody = sampleDataTable.find('tbody');
+                        tbody.empty();
+                        $.each(response.sample_data, function(index, row) {
+                            var newRow = $('<tr>');
+                            $.each(row, function(key, value) {
+                                newRow.append('<td>' + value + '</td>');
+                            });
+                            tbody.append(newRow);
+                        });
+                        $('#sample-data').show();
+
+                        // Update data summary table
+                        var summaryTableBody = $('#summary-table tbody');
+                        summaryTableBody.empty();
+                        $.each(response.summary, function(feature, data) {
+                            var row = '<tr>' +
+                                '<td>' + feature + '</td>' +
+                                '<td>' + data.description + '</td>' +
+                                '<td>' + data.data_type + '</td>' +
+                                '<td>' + data.missing_values + '</td>' +
+                                '</tr>';
+                            summaryTableBody.append(row);
+                        });
+                        $('#data-summary').show();
+
+                        // Update data visualization
+                        // Histogram
+                        var histogramData = [{
+                            x: response.histogram.data,
+                            type: 'histogram'
+                        }];
+                        var histogramLayout = {
+                            title: 'Histogram of ' + response.histogram.xaxis,
+                            xaxis: { title: response.histogram.xaxis },
+                            yaxis: { title: 'Frequency' }
+                        };
+                        Plotly.newPlot('histogram', histogramData, histogramLayout);
+
+                        // Box Plot
+                        var boxplotData = [{
+                            y: response.boxplot.data,
+                            type: 'box',
+                            name: response.boxplot.yaxis
+                        }];
+                        var boxplotLayout = {
+                            title: 'Box Plot of ' + response.boxplot.yaxis,
+                            yaxis: { title: response.boxplot.yaxis }
+                        };
+                        Plotly.newPlot('boxplot', boxplotData, boxplotLayout);
+
+                        // Scatter Plot
+                        var scatterplotData = [{
+                            x: response.scatterplot.x,
+                            y: response.scatterplot.y,
+                            mode: 'markers',
+                            type: 'scatter'
+                        }];
+                        var scatterplotLayout = {
+                            title: 'Scatter Plot of ' + response.scatterplot.xaxis + ' vs ' + response.scatterplot.yaxis,
+                            xaxis: { title: response.scatterplot.xaxis },
+                            yaxis: { title: response.scatterplot.yaxis }
+                        };
+                        Plotly.newPlot('scatterplot', scatterplotData, scatterplotLayout);
+
+                        $('#data-visualization').show();
+
+                        // Update feature importance chart
+                        var importanceData = [{
+                            x: response.feature_importance.features,
+                            y: response.feature_importance.importance,
+                            type: 'bar'
+                        }];
+                        var importanceLayout = {
+                            title: 'Feature Importance',
+                            xaxis: { title: 'Features' },
+                            yaxis: { title: 'Importance' }
+                        };
+                        Plotly.newPlot('importance-chart', importanceData, importanceLayout);
+                        $('#feature-importance').show();
+
+                        // Update related modules list
+                        var moduleList = $('#module-list');
+                        moduleList.empty();
+                        $.each(response.related_modules, function(index, module) {
+                            var listItem = '<li><a href="' + module.url + '">' + module.name + '</a></li>';
+                            moduleList.append(listItem);
+                        });
+                        $('#related-modules').show();
+                    },
+                    error: function(jqXHR, textStatus, errorThrown) {
+                        var errorMessage = jqXHR.responseJSON.error;
+                        alert('Error occurred while fetching dataset: ' + errorMessage);
+                    }
                 });
-                $('#data-summary').show();
-
-                // Update data visualization
-                // Assuming the response contains the necessary data for visualization
-                // Update the plotly.js charts or any other visualization libraries used
-
-                // Show the data visualization section
-                $('#data-visualization').show();
-            },
-            error: function(jqXHR, textStatus, errorThrown) {
-                var errorMessage = jqXHR.responseJSON.error;
-                alert('Error occurred while fetching dataset: ' + errorMessage);
+            } else {
+                alert('Please select a dataset or enter a dataset URL.');
             }
         });
-    } else {
-        alert('Please select a dataset or enter a dataset URL.');
-    }
-});
     });
 </script>
 {% endblock %}

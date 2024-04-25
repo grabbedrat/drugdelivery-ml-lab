@@ -1,4 +1,7 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, jsonify
+import requests
+import pandas as pd
+from io import StringIO
 
 app = Flask(__name__)
 
@@ -9,6 +12,10 @@ def index():
 @app.route('/module1')
 def module1():
     return render_template('module1/module1.html')
+
+@app.route('/data-exploration')
+def data_exploration():
+    return render_template('data_exploration.html')
 
 @app.route('/module1/introduction')
 def module1_introduction():
@@ -49,6 +56,36 @@ def module1_exercises_quizzes():
 @app.route('/module1/discussion-reflection')
 def module1_discussion_reflection():
     return render_template('module1/discussion_reflection.html')
+
+@app.route('/api/datasets', methods=['POST'])
+def load_dataset():
+    dataset_url = request.json['url']
+    print(f'Loading dataset from: {dataset_url}')
+    
+    try:
+        # Download the dataset content using requests with SSL certificate verification disabled
+        response = requests.get(dataset_url, verify=False)
+        response.raise_for_status()  # Raise an exception for unsuccessful status codes
+        
+        # Load the dataset from the downloaded content
+        dataset = pd.read_csv(StringIO(response.text))
+        print(f'Dataset shape: {dataset.shape}')
+        
+        # Perform dataset processing and analysis
+        dataset_info = {
+            'name': 'Delaney Dataset',
+            'description': 'Solubility data for a diverse set of compounds.',
+            'num_samples': len(dataset),
+            'num_features': len(dataset.columns) - 1,
+            # Add more dataset information and analysis results
+        }
+        
+        print('Dataset loaded successfully!')
+        return jsonify(dataset_info)
+    except Exception as e:
+        error_message = f"Error loading dataset: {str(e)}"
+        print(error_message)
+        return jsonify({'error': error_message}), 400
 
 if __name__ == '__main__':
     app.run(debug=True)

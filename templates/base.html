@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <header>
+        <h1>Flask Computational Chemistry ML Lab for Drug Distribution</h1>
+    </header>
+
+    <nav>
+        <ul class="menu">
+            <li><a href="/">Home</a></li>
+            <li class="dropdown">
+                <a href="/module1" class="dropdown-toggle">Module 1</a>
+                <ul class="dropdown-menu">
+                    <li><a href="/module1/introduction">Introduction</a></li>
+                    <li><a href="/module1/theoretical-background">Theoretical Background</a></li>
+                    <li><a href="/module1/data-exploration">Data Exploration</a></li>
+                    <li><a href="/module1/feature-engineering">Feature Engineering</a></li>
+                    <li><a href="/module1/model-building">Model Building</a></li>
+                    <li><a href="/module1/model-evaluation">Model Evaluation</a></li>
+                    <li><a href="/module1/model-interpretation">Model Interpretation</a></li>
+                    <li><a href="/module1/demo">Demo: Drug Property Prediction</a></li>
+                    <li><a href="/module1/exercises-quizzes">Exercises and Quizzes</a></li>
+                    <li><a href="/module1/discussion-reflection">Discussion and Reflection</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="/module2" class="dropdown-toggle">Module 2</a>
+                <ul class="dropdown-menu">
+                    <!-- Add Module 2 submenu items -->
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="/module3" class="dropdown-toggle">Module 3</a>
+                <ul class="dropdown-menu">
+                    <!-- Add Module 3 submenu items -->
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="/module4" class="dropdown-toggle">Module 4</a>
+                <ul class="dropdown-menu">
+                    <!-- Add Module 4 submenu items -->
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="/module5" class="dropdown-toggle">Module 5</a>
+                <ul class="dropdown-menu">
+                    <!-- Add Module 5 submenu items -->
+                </ul>
+            </li>
+            <li><a href="/resources">Resources</a></li>
+        </ul>
+    </nav>
+
+    <div class="content">
+        {% block content %}{% endblock %}
+    </div>
+
+    <footer>
+        &copy; 2023 Flask Computational Chemistry ML Lab for Drug Distribution. All rights reserved.
+    </footer>
+</body>
+</html>

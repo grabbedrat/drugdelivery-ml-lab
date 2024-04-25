@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Sources Overview</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+        h1 {
+            color: #333;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        tr:hover {
+            background-color: #f9f9f9;
+        }
+        .source-link {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .source-link:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <h1>Data Sources Overview</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Data Source</th>
+                <th>Description</th>
+                <th>Data Types</th>
+                <th>Access Methods</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><a href="https://pubchem.ncbi.nlm.nih.gov/" target="_blank" class="source-link">PubChem</a></td>
+                <td>A public repository of chemical information, including compound structures, properties, and bioactivity data.</td>
+                <td>Compound structures, properties, bioassay data</td>
+                <td>REST API, PUG, FTP, Bulk Data Download</td>
+            </tr>
+            <tr>
+                <td><a href="https://www.ebi.ac.uk/chembl/" target="_blank" class="source-link">ChEMBL</a></td>
+                <td>A manually curated database of bioactive molecules with drug-like properties, including compound structures and bioactivity data.</td>
+                <td>Compound structures, bioactivity data, target information</td>
+                <td>Web Services, FTP, SQL Dump</td>
+            </tr>
+            <tr>
+                <td><a href="https://www.drugbank.ca/" target="_blank" class="source-link">DrugBank</a></td>
+                <td>A comprehensive database of drug information, including drug targets, mechanisms of action, and pharmacokinetic data.</td>
+                <td>Drug structures, targets, pharmacokinetic data, drug-drug interactions</td>
+                <td>XML, CSV, SQL Dump</td>
+            </tr>
+            <tr>
+                <td><a href="https://ctdbase.org/" target="_blank" class="source-link">CTD</a></td>
+                <td>The Comparative Toxicogenomics Database, which provides curated chemical-disease associations and chemical-gene interactions.</td>
+                <td>Chemical-disease associations, chemical-gene interactions</td>
+                <td>REST API, Downloads</td>
+            </tr>
+            <tr>
+                <td><a href="http://sideeffects.embl.de/" target="_blank" class="source-link">SIDER</a></td>
+                <td>A database of drug side effects, extracted from drug labels and public documents.</td>
+                <td>Drug side effect information</td>
+                <td>CSV files, MySQL dumps</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>

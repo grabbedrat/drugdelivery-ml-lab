@@ -39,7 +39,7 @@ h1 {
     padding: 15px 20px;
 }
 
-.dropdown:hover .dropdown-menu {
+.dropdown:hover > .dropdown-menu {
     display: block;
 }
 
@@ -50,6 +50,7 @@ h1 {
     min-width: 300px;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     z-index: 1;
+    padding: 0;
 }
 
 .dropdown-menu li {
@@ -65,6 +66,16 @@ h1 {
 
 .dropdown-menu li:hover {
     background-color: #e0e0e0;
+}
+
+.dropdown-submenu:hover > .dropdown-menu {
+    display: block;
+}
+
+.dropdown-submenu .dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: 0;
 }
 
 .content {

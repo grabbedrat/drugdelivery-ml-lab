@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+
+{% block title %}Module 1: Lesson 1 - Molecular Representation and Descriptors{% endblock %}
+
+{% block content %}
+<h2>Lesson 1: Molecular Representation and Descriptors</h2>
+
+<p>In this lesson, we will explore various methods for representing molecules and calculating molecular descriptors, which are essential for computational drug discovery.</p>
+
+<h3>Topics Covered</h3>
+
+<ul>
+    <li>Introduction to molecular representation</li>
+    <li>SMILES (Simplified Molecular-Input Line-Entry System)</li>
+    <li>InChI (International Chemical Identifier)</li>
+    <li>Molecular graphs and adjacency matrices</li>
+    <li>Types of molecular descriptors</li>
+    <li>2D and 3D descriptors</li>
+    <li>Physicochemical properties</li>
+    <li>Topological indices</li>
+    <li>Fingerprints and structural keys</li>
+</ul>
+
+<h3>Learning Objectives</h3>
+
+<p>By the end of this lesson, you will be able to:</p>
+
+<ul>
+    <li>Understand different methods for representing molecules.</li>
+    <li>Convert molecules between SMILES, InChI, and molecular graph representations.</li>
+    <li>Calculate various types of molecular descriptors.</li>
+    <li>Understand the significance of molecular descriptors in drug discovery.</li>
+</ul>
+
+<h3>Lesson Content</h3>
+
+<h4>Introduction to Molecular Representation</h4>
+
+<p>Molecular representation is the process of encoding the structure and properties of a molecule in a format that can be easily processed by computers. There are several common methods for representing molecules, including:</p>
+
+<ul>
+    <li>SMILES (Simplified Molecular-Input Line-Entry System): A string notation for representing molecules based on their connectivity.</li>
+    <li>InChI (International Chemical Identifier): A standardized, non-proprietary identifier for chemical substances.</li>
+    <li>Molecular graphs: A graph-based representation where atoms are nodes and bonds are edges.</li>
+</ul>
+
+<h4>Molecular Descriptors</h4>
+
+<p>Molecular descriptors are numerical values that capture various aspects of a molecule's structure and properties. They are used as features for building machine learning models in drug discovery. Some common types of molecular descriptors include:</p>
+
+<ul>
+    <li>2D descriptors: Derived from the molecular graph, such as molecular weight, number of atoms, and topological indices.</li>
+    <li>3D descriptors: Calculated from the 3D structure of the molecule, such as surface area, volume, and shape descriptors.</li>
+    <li>Physicochemical properties: Descriptors related to the physical and chemical properties of the molecule, such as solubility, lipophilicity, and hydrogen bond donors/acceptors.</li>
+    <li>Fingerprints and structural keys: Binary vectors that encode the presence or absence of specific substructures or functional groups in the molecule.</li>
+</ul>
+
+<h3>Exercises</h3>
+
+<ol>
+    <li>Convert the following molecules from SMILES to InChI:
+        <ul>
+            <li>CC(=O)Oc1ccccc1C(=O)O (Aspirin)</li>
+            <li>CN1C=NC2=C1C(=O)N(C)C(=O)N2C (Caffeine)</li>
+        </ul>
+    </li>
+    <li>Calculate the following descriptors for the given molecules:
+        <ul>
+            <li>Molecular weight</li>
+            <li>Number of hydrogen bond donors and acceptors</li>
+            <li>Topological polar surface area (TPSA)</li>
+        </ul>
+    </li>
+</ol>
+
+<h3>Additional Resources</h3>
+
+<ul>
+    <li><a href="https://www.daylight.com/dayhtml/doc/theory/theory.smiles.html" target="_blank">SMILES - A Simplified Chemical Language</a></li>
+    <li><a href="https://www.inchi-trust.org/technical-faq/" target="_blank">InChI Technical FAQ</a></li>
+    <li><a href="https://jcheminf.biomedcentral.com/articles/10.1186/s13321-015-0069-3" target="_blank">Molecular descriptors for chemoinformatics</a></li>
+</ul>
+
+{% endblock %}

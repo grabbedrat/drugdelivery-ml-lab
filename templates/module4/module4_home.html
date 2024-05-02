@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}Module 4: Drug Repurposing and Combination Therapy{% endblock %}
+
+{% block content %}
+<h2>Module 4: Drug Repurposing and Combination Therapy</h2>
+
+<p>In this module, you will learn about drug repurposing and combination therapy strategies. The module covers the following topics:</p>
+
+<ul>
+    <li>Lesson 1: Network-Based Approaches for Repurposing</li>
+    <li>Lesson 2: Signature-Based Methods and Transcriptomics</li>
+    <li>Lesson 3: Synergistic Drug Combinations</li>
+    <li>Project: Repurposing Approved Drugs for a New Indication</li>
+</ul>
+
+<h3>Learning Objectives</h3>
+
+<p>By the end of this module, you will be able to:</p>
+
+<ul>
+    <li>Understand and apply network-based approaches for drug repurposing.</li>
+    <li>Understand signature-based methods and transcriptomics for drug repurposing.</li>
+    <li>Analyze and identify synergistic drug combinations.</li>
+    <li>Complete a project on repurposing approved drugs for a new indication.</li>
+</ul>
+
+<h3>Lessons</h3>
+
+<ul>
+    <li><a href="{{ url_for('module4.lesson1') }}">Lesson 1: Network-Based Approaches for Repurposing</a></li>
+    <li><a href="{{ url_for('module4.lesson2') }}">Lesson 2: Signature-Based Methods and Transcriptomics</a></li>
+    <li><a href="{{ url_for('module4.lesson3') }}">Lesson 3: Synergistic Drug Combinations</a></li>
+    <li><a href="{{ url_for('module4.project') }}">Project: Repurposing Approved Drugs for a New Indication</a></li>
+</ul>
+{% endblock %}

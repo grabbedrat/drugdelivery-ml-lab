@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}Module 2: Drug Property Prediction and Optimization{% endblock %}
+
+{% block content %}
+<h2>Module 2: Drug Property Prediction and Optimization</h2>
+
+<p>In this module, you will learn about predicting and optimizing drug properties using machine learning models. The module covers the following topics:</p>
+
+<ul>
+    <li>Lesson 1: Regression and Classification Models</li>
+    <li>Lesson 2: Feature Selection and Model Validation</li>
+    <li>Lesson 3: Multi-Objective Optimization for Drug Design</li>
+    <li>Project: Predicting and Optimizing ADME Properties</li>
+</ul>
+
+<h3>Learning Objectives</h3>
+
+<p>By the end of this module, you will be able to:</p>
+
+<ul>
+    <li>Understand and apply regression and classification models for drug property prediction.</li>
+    <li>Perform feature selection and model validation techniques.</li>
+    <li>Understand and apply multi-objective optimization techniques for drug design.</li>
+    <li>Complete a project on predicting and optimizing ADME properties.</li>
+</ul>
+
+<h3>Lessons</h3>
+
+<ul>
+    <li><a href="{{ url_for('module2.lesson1') }}">Lesson 1: Regression and Classification Models</a></li>
+    <li><a href="{{ url_for('module2.lesson2') }}">Lesson 2: Feature Selection and Model Validation</a></li>
+    <li><a href="{{ url_for('module2.lesson3') }}">Lesson 3: Multi-Objective Optimization for Drug Design</a></li>
+    <li><a href="{{ url_for('module2.project') }}">Project: Predicting and Optimizing ADME Properties</a></li>
+</ul>
+{% endblock %}

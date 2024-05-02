@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}Module 1: Fundamentals of Computational Drug Discovery{% endblock %}
+
+{% block content %}
+<h2>Module 1: Fundamentals of Computational Drug Discovery</h2>
+
+<p>In this module, you will learn the fundamental concepts and techniques used in computational drug discovery. The module covers the following topics:</p>
+
+<ul>
+    <li>Lesson 1: Molecular Representation and Descriptors</li>
+    <li>Lesson 2: Data Preprocessing and Feature Engineering</li>
+    <li>Lesson 3: Machine Learning Basics for Drug Discovery</li>
+</ul>
+
+<h3>Learning Objectives</h3>
+
+<p>By the end of this module, you will be able to:</p>
+
+<ul>
+    <li>Understand various molecular representation methods and descriptors used in drug discovery.</li>
+    <li>Preprocess and engineer features from drug-related data.</li>
+    <li>Understand the basic concepts of machine learning and their applications in drug discovery.</li>
+</ul>
+
+<h3>Lessons</h3>
+
+<ul>
+    <li><a href="{{ url_for('module1.lesson1') }}">Lesson 1: Molecular Representation and Descriptors</a></li>
+    <li><a href="{{ url_for('module1.lesson2') }}">Lesson 2: Data Preprocessing and Feature Engineering</a></li>
+    <li><a href="{{ url_for('module1.lesson3') }}">Lesson 3: Machine Learning Basics for Drug Discovery</a></li>
+</ul>
+{% endblock %}

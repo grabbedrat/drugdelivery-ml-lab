@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}Module 3: Drug-Target Interaction and Molecular Modeling{% endblock %}
+
+{% block content %}
+<h2>Module 3: Drug-Target Interaction and Molecular Modeling</h2>
+
+<p>In this module, you will learn about drug-target interactions and molecular modeling techniques. The module covers the following topics:</p>
+
+<ul>
+    <li>Lesson 1: Molecular Docking and Scoring Functions</li>
+    <li>Lesson 2: Molecular Dynamics Simulations</li>
+    <li>Lesson 3: Machine Learning for Interaction Prediction</li>
+    <li>Case Study: Identifying Potential Drug-Target Interactions</li>
+</ul>
+
+<h3>Learning Objectives</h3>
+
+<p>By the end of this module, you will be able to:</p>
+
+<ul>
+    <li>Understand and apply molecular docking and scoring functions.</li>
+    <li>Understand and perform molecular dynamics simulations.</li>
+    <li>Apply machine learning techniques for drug-target interaction prediction.</li>
+    <li>Analyze a case study on identifying potential drug-target interactions.</li>
+</ul>
+
+<h3>Lessons</h3>
+
+<ul>
+    <li><a href="{{ url_for('module3.lesson1') }}">Lesson 1: Molecular Docking and Scoring Functions</a></li>
+    <li><a href="{{ url_for('module3.lesson2') }}">Lesson 2: Molecular Dynamics Simulations</a></li>
+    <li><a href="{{ url_for('module3.lesson3') }}">Lesson 3: Machine Learning for Interaction Prediction</a></li>
+    <li><a href="{{ url_for('module3.case_study') }}">Case Study: Identifying Potential Drug-Target Interactions</a></li>
+</ul>
+{% endblock %}

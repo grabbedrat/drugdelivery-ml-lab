@@ -13,3 +13,7 @@ def lesson2():
 @module1.route('/lesson3')
 def lesson3():
     return render_template('module1/lesson3.html')
+
+@module1.route('/')
+def module1_home():
+    return render_template('module1/module1_home.html')

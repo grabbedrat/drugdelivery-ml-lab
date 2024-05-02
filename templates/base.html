@@ -8,7 +8,6 @@
     <header>
         <h1>Flask Computational Chemistry ML Lab for Drug Distribution</h1>
     </header>
-
     <nav>
         <ul class="menu">
             <li><a href="/">Home</a></li>
@@ -16,21 +15,19 @@
             <li class="dropdown">
                 <a href="#" class="dropdown-toggle">Modules</a>
                 <ul class="dropdown-menu">
-                    <li><a href="/module1">Module 1: Simple Drug Property Prediction</a></li>
-                    <li><a href="/module2">Module 2: Drug-Target Interaction Prediction</a></li>
-                    <li><a href="/module3">Module 3: Drug Distribution and Pharmacokinetic Modeling</a></li>
-                    <li><a href="/module4">Module 4: Drug Repurposing and Combination Therapy</a></li>
-                    <li><a href="/module5">Module 5: Drug Toxicity and Adverse Effect Prediction</a></li>
+                    <li><a href="{{ url_for('module1') }}">Module 1: Simple Drug Property Prediction</a></li>
+                    <li><a href="{{ url_for('module2') }}">Module 2: Drug-Target Interaction Prediction</a></li>
+                    <li><a href="#">Module 3: Drug Distribution and Pharmacokinetic Modeling</a></li>
+                    <li><a href="#">Module 4: Drug Repurposing and Combination Therapy</a></li>
+                    <li><a href="#">Module 5: Drug Toxicity and Adverse Effect Prediction</a></li>
                 </ul>
             </li>
-            <li><a href="/resources">Resources</a></li>
+            <li><a href="#">Resources</a></li>
         </ul>
     </nav>
-
     <div class="content">
         {% block content %}{% endblock %}
     </div>
-
     <footer>
         &copy; 2023 Flask Computational Chemistry ML Lab for Drug Distribution. All rights reserved.
     </footer>

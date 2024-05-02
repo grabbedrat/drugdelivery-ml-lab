@@ -42,3 +42,47 @@ Required Python libraries (listed in requirements.txt)
 Installation
 
 Clone the repository:
+
+Home
+Data Exploration
+
+    Data Sources and Preprocessing (ipynb)
+
+alt lesson plan
+Modules
+
+    Module 1: Fundamentals of Computational Drug Discovery
+        Introduction to Computational Chemistry and Drug Discovery
+        Lesson 1: Molecular Representation and Descriptors (ipynb)
+        Lesson 2: Data Preprocessing and Feature Engineering (ipynb)
+        Lesson 3: Machine Learning Basics for Drug Discovery (ipynb)
+    Module 2: Drug Property Prediction and Optimization
+        Introduction to QSAR and Property Prediction
+        Lesson 1: Regression and Classification Models (ipynb)
+        Lesson 2: Feature Selection and Model Validation (ipynb)
+        Lesson 3: Multi-Objective Optimization for Drug Design (ipynb)
+        Project: Predicting and Optimizing ADME Properties (ipynb)
+    Module 3: Drug-Target Interaction and Molecular Modeling
+        Introduction to Drug-Target Interactions
+        Lesson 1: Molecular Docking and Scoring Functions (ipynb)
+        Lesson 2: Molecular Dynamics Simulations (ipynb)
+        Lesson 3: Machine Learning for Interaction Prediction (ipynb)
+        Case Study: Identifying Potential Drug-Target Interactions (ipynb)
+    Module 4: Drug Repurposing and Combination Therapy
+        Introduction to Drug Repurposing
+        Lesson 1: Network-Based Approaches for Repurposing (ipynb)
+        Lesson 2: Signature-Based Methods and Transcriptomics (ipynb)
+        Lesson 3: Synergistic Drug Combinations (ipynb)
+        Project: Repurposing Approved Drugs for a New Indication (ipynb)
+    Module 5: Toxicity Prediction and Adverse Effect Analysis
+        Introduction to Computational Toxicology
+        Lesson 1: Toxicity Databases and Data Curation (ipynb)
+        Lesson 2: QSAR Models for Toxicity Prediction (ipynb)
+        Lesson 3: Adverse Event Mining and Analysis (ipynb)
+        Case Study: Assessing the Toxicity Risk of a Drug Candidate (ipynb)
+
+Resources
+
+    Datasets and Databases
+    Computational Tools and Libraries
+    Tutorials and Research Papers

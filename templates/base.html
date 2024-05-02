@@ -1,74 +1,192 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-<head>
-    <title>{% block title %}{% endblock %}</title>
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
-</head>
-<body>
-    <header>
-        <h1>Flask Computational Chemistry ML Lab for Drug Discovery</h1>
-    </header>
-    <nav>
-        <ul class="menu">
-            <li><a href="/">Home</a></li>
-            <li><a href="/data-exploration">Data Exploration</a></li>
-            <li class="dropdown">
-                <a href="#" class="dropdown-toggle">Modules</a>
-                <ul class="dropdown-menu">
-                    <li class="dropdown-submenu">
-                        <a href="#">Module 1: Fundamentals of Computational Drug Discovery</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="{{ url_for('module1_lesson1') }}">Lesson 1: Molecular Representation and Descriptors</a></li>
-                            <li><a href="{{ url_for('module1_lesson2') }}">Lesson 2: Data Preprocessing and Feature Engineering</a></li>
-                            <li><a href="{{ url_for('module1_lesson3') }}">Lesson 3: Machine Learning Basics for Drug Discovery</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown-submenu">
-                        <a href="#">Module 2: Drug Property Prediction and Optimization</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="{{ url_for('module2_lesson1') }}">Lesson 1: Regression and Classification Models</a></li>
-                            <li><a href="{{ url_for('module2_lesson2') }}">Lesson 2: Feature Selection and Model Validation</a></li>
-                            <li><a href="{{ url_for('module2_lesson3') }}">Lesson 3: Multi-Objective Optimization for Drug Design</a></li>
-                            <li><a href="{{ url_for('module2_project') }}">Project: Predicting and Optimizing ADME Properties</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown-submenu">
-                        <a href="#">Module 3: Drug-Target Interaction and Molecular Modeling</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="{{ url_for('module3_lesson1') }}">Lesson 1: Molecular Docking and Scoring Functions</a></li>
-                            <li><a href="{{ url_for('module3_lesson2') }}">Lesson 2: Molecular Dynamics Simulations</a></li>
-                            <li><a href="{{ url_for('module3_lesson3') }}">Lesson 3: Machine Learning for Interaction Prediction</a></li>
-                            <li><a href="{{ url_for('module3_case_study') }}">Case Study: Identifying Potential Drug-Target Interactions</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown-submenu">
-                        <a href="#">Module 4: Drug Repurposing and Combination Therapy</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="{{ url_for('module4_lesson1') }}">Lesson 1: Network-Based Approaches for Repurposing</a></li>
-                            <li><a href="{{ url_for('module4_lesson2') }}">Lesson 2: Signature-Based Methods and Transcriptomics</a></li>
-                            <li><a href="{{ url_for('module4_lesson3') }}">Lesson 3: Synergistic Drug Combinations</a></li>
-                            <li><a href="{{ url_for('module4_project') }}">Project: Repurposing Approved Drugs for a New Indication</a></li>
-                        </ul>
-                    </li>
-                    <li class="dropdown-submenu">
-                        <a href="#">Module 5: Toxicity Prediction and Adverse Effect Analysis</a>
-                        <ul class="dropdown-menu">
-                            <li><a href="{{ url_for('module5_lesson1') }}">Lesson 1: Toxicity Databases and Data Curation</a></li>
-                            <li><a href="{{ url_for('module5_lesson2') }}">Lesson 2: QSAR Models for Toxicity Prediction</a></li>
-                            <li><a href="{{ url_for('module5_lesson3') }}">Lesson 3: Adverse Event Mining and Analysis</a></li>
-                            <li><a href="{{ url_for('module5_case_study') }}">Case Study: Assessing the Toxicity Risk of a Drug Candidate</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </li>
-            <li><a href="#">Resources</a></li>
-        </ul>
-    </nav>
-    <div class="content">
-        {% block content %}{% endblock %}
-    </div>
-    <footer>
-        &copy; 2024 Flask Computational Chemistry ML Lab for Drug Discovery. All rights reserved.
-    </footer>
-</body>
+    <head>
+        <title>{% block title %}{% endblock %}</title>
+        <link
+            rel="stylesheet"
+            href="{{ url_for('static', filename='css/styles.css') }}"
+        />
+    </head>
+    <body>
+        <header>
+            <h1>Flask Computational Chemistry ML Lab for Drug Discovery</h1>
+        </header>
+        <nav>
+            <ul class="menu">
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li>
+                    <a href="{{ url_for('data_exploration') }}"
+                        >Data Exploration</a
+                    >
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle">Modules</a>
+                    <ul class="dropdown-menu">
+                        <li class="dropdown-submenu">
+                            <a href="#"
+                                >Module 1: Fundamentals of Computational Drug
+                                Discovery</a
+                            >
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="{{ url_for('module1.lesson1') }}"
+                                        >Lesson 1: Molecular Representation and
+                                        Descriptors</a
+                                    >
+                                </li>
+                                <li>
+                                    <a href="{{ url_for('module1.lesson2') }}"
+                                        >Lesson 2: Data Preprocessing and
+                                        Feature Engineering</a
+                                    >
+                                </li>
+                                <li>
+                                    <a href="{{ url_for('module1.lesson3') }}"
+                                        >Lesson 3: Machine Learning Basics for
+                                        Drug Discovery</a
+                                    >
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown-submenu">
+                            <a href="#"
+                                >Module 2: Drug Property Prediction and
+                                Optimization</a
+                            >
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="{{ url_for('module2.lesson1') }}"
+                                        >Lesson 1: Regression and Classification
+                                        Models</a
+                                    >
+                                </li>
+                                <li>
+                                    <a href="{{ url_for('module2.lesson2') }}"
+                                        >Lesson 2: Feature Selection and Model
+                                        Validation</a
+                                    >
+                                </li>
+                                <li>
+                                    <a href="{{ url_for('module2.lesson3') }}"
+                                        >Lesson 3: Multi-Objective Optimization
+                                        for Drug Design</a
+                                    >
+                                </li>
+                                <li>
+                                    <a href="{{ url_for('module2.project') }}"
+                                        >Project: Predicting and Optimizing ADME
+                                        Properties</a
+                                    >
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown-submenu">
+                            <a href="#"
+                                >Module 3: Drug-Target Interaction and Molecular
+                                Modeling</a
+                            >
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="{{ url_for('module3.lesson1') }}"
+                                        >Lesson 1: Molecular Docking and Scoring
+                                        Functions</a
+                                    >
+                                </li>
+                                <li>
+                                    <a href="{{ url_for('module3.lesson2') }}"
+                                        >Lesson 2: Molecular Dynamics
+                                        Simulations</a
+                                    >
+                                </li>
+                                <li>
+                                    <a href="{{ url_for('module3.lesson3') }}"
+                                        >Lesson 3: Machine Learning for
+                                        Interaction Prediction</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="{{ url_for('module3.case_study') }}"
+                                        >Case Study: Identifying Potential
+                                        Drug-Target Interactions</a
+                                    >
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown-submenu">
+                            <a href="#"
+                                >Module 4: Drug Repurposing and Combination
+                                Therapy</a
+                            >
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="{{ url_for('module4.lesson1') }}"
+                                        >Lesson 1: Network-Based Approaches for
+                                        Repurposing</a
+                                    >
+                                </li>
+                                <li>
+                                    <a href="{{ url_for('module4.lesson2') }}"
+                                        >Lesson 2: Signature-Based Methods and
+                                        Transcriptomics</a
+                                    >
+                                </li>
+                                <li>
+                                    <a href="{{ url_for('module4.lesson3') }}"
+                                        >Lesson 3: Synergistic Drug
+                                        Combinations</a
+                                    >
+                                </li>
+                                <li>
+                                    <a href="{{ url_for('module4.project') }}"
+                                        >Project: Repurposing Approved Drugs for
+                                        a New Indication</a
+                                    >
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="dropdown-submenu">
+                            <a href="#"
+                                >Module 5: Toxicity Prediction and Adverse
+                                Effect Analysis</a
+                            >
+                            <ul class="dropdown-menu">
+                                <li>
+                                    <a href="{{ url_for('module5.lesson1') }}"
+                                        >Lesson 1: Toxicity Databases and Data
+                                        Curation</a
+                                    >
+                                </li>
+                                <li>
+                                    <a href="{{ url_for('module5.lesson2') }}"
+                                        >Lesson 2: QSAR Models for Toxicity
+                                        Prediction</a
+                                    >
+                                </li>
+                                <li>
+                                    <a href="{{ url_for('module5.lesson3') }}"
+                                        >Lesson 3: Adverse Event Mining and
+                                        Analysis</a
+                                    >
+                                </li>
+                                <li>
+                                    <a
+                                        href="{{ url_for('module5.case_study') }}"
+                                        >Case Study: Assessing the Toxicity Risk
+                                        of a Drug Candidate</a
+                                    >
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li><a href="#">Resources</a></li>
+            </ul>
+        </nav>
+        <div class="content">{% block content %}{% endblock %}</div>
+        <footer>
+            &copy; 2024 Flask Computational Chemistry ML Lab for Drug Discovery.
+            All rights reserved.
+        </footer>
+    </body>
 </html>

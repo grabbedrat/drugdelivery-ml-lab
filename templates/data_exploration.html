@@ -1,47 +1,77 @@
-{% extends 'base.html' %}
-
-{% block content %}
-<!DOCTYPE html>
+{% extends 'base.html' %} {% block content %}
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Data Source Review - ML-Assisted Drug Delivery</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-</head>
-<body>
-    <!-- Navigation bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
-        <!-- ... -->
-    </nav>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Data Source Review - ML-Assisted Drug Delivery</title>
+        <link
+            rel="stylesheet"
+            href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+        />
+    </head>
+    <body>
+        <div class="container">
+            <h1>Data Source Review</h1>
+            <p>
+                Explore a comprehensive collection of data sources relevant to
+                ML-assisted drug delivery. Gain insights into chemical
+                compounds, drug databases, pharmacokinetic data, and adverse
+                drug reactions.
+            </p>
 
-    <div class="container">
-        <h1>Data Source Review</h1>
-        <p>Explore a comprehensive collection of data sources relevant to ML-assisted drug delivery. Gain insights into chemical compounds, drug databases, pharmacokinetic data, and adverse drug reactions.</p>
-
-        <div class="mt-4">
-            <h2>Chemical Compound Databases</h2>
-            <div class="card mt-3">
-                <div class="card-body">
-                    <h5 class="card-title">PubChem</h5>
-                    <p class="card-text">PubChem is a public repository of chemical compounds and their biological activities. It provides a vast collection of chemical structures, properties, and bioassay data.</p>
-                    <ul>
-                        <li>Access: API (<a href="https://pubchemdocs.ncbi.nlm.nih.gov/pug-rest" target="_blank">Documentation</a>)</li>
-                        <li>Key Features: Chemical structures, properties, bioassay data</li>
-                        <li>Applications:
-                            <ul>
-                                <li>Drug discovery and virtual screening</li>
-                                <li>Structure-activity relationship (SAR) studies</li>
-                                <li>Chemical data integration and analysis</li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#pubchemExample" aria-expanded="false" aria-controls="pubchemExample">
-                        API Example
-                    </button>
-                    <div class="collapse" id="pubchemExample">
-                        <div class="card card-body">
-                            <pre>
+            <div class="mt-4">
+                <h2>Chemical Compound Databases</h2>
+                <div class="card mt-3">
+                    <div class="card-body">
+                        <h5 class="card-title">PubChem</h5>
+                        <p class="card-text">
+                            PubChem is a public repository of chemical compounds
+                            and their biological activities. It provides a vast
+                            collection of chemical structures, properties, and
+                            bioassay data.
+                        </p>
+                        <ul>
+                            <li>
+                                Access: API (<a
+                                    href="https://pubchemdocs.ncbi.nlm.nih.gov/pug-rest"
+                                    target="_blank"
+                                    >Documentation</a
+                                >)
+                            </li>
+                            <li>
+                                Key Features: Chemical structures, properties,
+                                bioassay data
+                            </li>
+                            <li>
+                                Applications:
+                                <ul>
+                                    <li>
+                                        Drug discovery and virtual screening
+                                    </li>
+                                    <li>
+                                        Structure-activity relationship (SAR)
+                                        studies
+                                    </li>
+                                    <li>
+                                        Chemical data integration and analysis
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <button
+                            class="btn btn-primary"
+                            type="button"
+                            data-toggle="collapse"
+                            data-target="#pubchemExample"
+                            aria-expanded="false"
+                            aria-controls="pubchemExample"
+                        >
+                            API Example
+                        </button>
+                        <div class="collapse" id="pubchemExample">
+                            <div class="card card-body">
+                                <pre>
 GET https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/aspirin/property/MolecularWeight,MolecularFormula,InChIKey/JSON
 
 {
@@ -56,61 +86,92 @@ GET https://pubchem.ncbi.nlm.nih.gov/rest/pug/compound/name/aspirin/property/Mol
     ]
   }
 }
-                            </pre>
+                            </pre
+                                >
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="card mt-3">
-                <div class="card-body">
-                    <h5 class="card-title">ChEMBL</h5>
-                    <p class="card-text">ChEMBL is a manually curated database of bioactive molecules with drug-like properties. It includes information on chemical structures, bioactivity data, and targets.</p>
-                    <ul>
-                        <li>Access: Download (<a href="https://www.ebi.ac.uk/chembl/downloads" target="_blank">Link</a>)</li>
-                        <li>Key Features: Chemical structures, bioactivity data, drug targets</li>
-                        <li>Applications:
-                            <ul>
-                                <li>Identifying bioactive compounds for drug development</li>
-                                <li>Exploring compound-target interactions</li>
-                                <li>Bioactivity data analysis and modeling</li>
-                            </ul>
-                        </li>
-                    </ul>
-                    <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#chemblExample" aria-expanded="false" aria-controls="chemblExample">
-                        Dataset Preview
-                    </button>
-                    <div class="collapse" id="chemblExample">
-                        <div class="card card-body">
-                            <pre>
+                <div class="card mt-3">
+                    <div class="card-body">
+                        <h5 class="card-title">ChEMBL</h5>
+                        <p class="card-text">
+                            ChEMBL is a manually curated database of bioactive
+                            molecules with drug-like properties. It includes
+                            information on chemical structures, bioactivity
+                            data, and targets.
+                        </p>
+                        <ul>
+                            <li>
+                                Access: Download (<a
+                                    href="https://www.ebi.ac.uk/chembl/downloads"
+                                    target="_blank"
+                                    >Link</a
+                                >)
+                            </li>
+                            <li>
+                                Key Features: Chemical structures, bioactivity
+                                data, drug targets
+                            </li>
+                            <li>
+                                Applications:
+                                <ul>
+                                    <li>
+                                        Identifying bioactive compounds for drug
+                                        development
+                                    </li>
+                                    <li>
+                                        Exploring compound-target interactions
+                                    </li>
+                                    <li>
+                                        Bioactivity data analysis and modeling
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                        <button
+                            class="btn btn-primary"
+                            type="button"
+                            data-toggle="collapse"
+                            data-target="#chemblExample"
+                            aria-expanded="false"
+                            aria-controls="chemblExample"
+                        >
+                            Dataset Preview
+                        </button>
+                        <div class="collapse" id="chemblExample">
+                            <div class="card card-body">
+                                <pre>
 molecule_chembl_id,canonical_smiles,standard_inchi_key
 CHEMBL1200550,Cc1ccc(cc1)S(=O)(=O)N1C2CCC1CC(C2)NC(=O)c3ccc(cc3)F,GETQZCLCWQESSV-UHFFFAOYSA-N
 CHEMBL1200551,Cc1ccc(cc1)S(=O)(=O)N1C2CCC1CC(C2)NC(=O)c3ccc(cc3)Cl,LZJFXMUXSZGUNF-UHFFFAOYSA-N
-                            </pre>
+                            </pre
+                                >
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+
+            <div class="mt-4">
+                <h2>Drug Databases</h2>
+                <!-- ... -->
+            </div>
+
+            <div class="mt-4">
+                <h2>Pharmacokinetic Databases</h2>
+                <!-- ... -->
+            </div>
+
+            <div class="mt-4">
+                <h2>Adverse Drug Reaction Databases</h2>
+                <!-- ... -->
+            </div>
         </div>
 
-        <div class="mt-4">
-            <h2>Drug Databases</h2>
-            <!-- ... -->
-        </div>
-
-        <div class="mt-4">
-            <h2>Pharmacokinetic Databases</h2>
-            <!-- ... -->
-        </div>
-
-        <div class="mt-4">
-            <h2>Adverse Drug Reaction Databases</h2>
-            <!-- ... -->
-        </div>
-    </div>
-
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-</body>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    </body>
 </html>
 {% endblock %}

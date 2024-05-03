@@ -96,7 +96,7 @@ body {
   
   h2 {
     color: #16a085;
-    margin-top: 30px;
+    margin-top: 20px;
   }
   
   h3 {
@@ -137,6 +137,8 @@ body {
     font-size: 14px;
     border: 1px solid #ddd;
     resize: vertical;
+    border-radius: 4px;
+    box-sizing: border-box;
   }
   
   footer {

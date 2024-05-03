@@ -55,6 +55,30 @@
     <li>Fingerprints and structural keys: Binary vectors that encode the presence or absence of specific substructures or functional groups in the molecule.</li>
 </ul>
 
+<section>
+    <h2>Molecular Fingerprints</h2>
+    <p>
+        Molecular fingerprints are a way of encoding the structure of a molecule. The most common type of molecular fingerprint is the binary fingerprint. This is a bit string (a sequence of 1s and 0s) where each bit represents the presence or absence of a particular substructure in the molecule.
+    </p>
+    <p>
+        There are many different types of fingerprints, such as topological fingerprints, circular fingerprints (like ECFP), and MACCS keys. The choice of fingerprint often depends on the specific application.
+    </p>
+    <h3>Exercise</h3>
+    <p>
+        Given a molecule, generate its ECFP4 fingerprint and MACCS keys. Compare the two fingerprints. What differences do you notice? What could be the implications of these differences for similarity search and machine learning?
+    </p>
+    <h3>Additional Exercises</h3>
+    <p>
+        <strong>For high-level ML students:</strong> Use the generated ECFP4 fingerprints and MACCS keys to build a simple machine learning model (e.g., logistic regression, decision tree, etc.) to predict some property of the molecules (e.g., solubility, toxicity, etc.). Evaluate the performance of the model using appropriate metrics (e.g., accuracy, AUC-ROC, etc.).
+    </p>
+    <p>
+        <strong>For high-level chemistry undergraduates:</strong> Analyze the generated ECFP4 fingerprints and MACCS keys. What do the bits in these fingerprints represent? How do they capture the structure of the molecule? How could you use these fingerprints to compare the similarity between different molecules?
+    </p>
+    <p>
+        <strong>Free-form Exercise:</strong> Explore the use of other types of fingerprints (e.g., topological fingerprints, atom-pair fingerprints, etc.) or other machine learning models (e.g., neural networks, SVMs, etc.). What advantages or disadvantages do they have compared to ECFP4 fingerprints and MACCS keys? How do they affect the performance of the machine learning model?
+    </p>
+</section>
+
 <h3>Exercises</h3>
 
 <ol>

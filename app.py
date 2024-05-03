@@ -23,4 +23,4 @@ def data_exploration():
     return render_template('data_exploration.html')
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()

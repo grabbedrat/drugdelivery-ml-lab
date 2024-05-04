@@ -22,11 +22,4 @@ def chatbot():
     except Exception as e:
         return str(e), 400
 
-@chatbot_bp.route('/chatbot/<int:message_id>', methods=['DELETE'])
-def delete_message(message_id):
-    messages[:] = [m for m in messages if m['id'] != message_id]
-    return '', 204
-
-def generate_response(prompt, context):
-    # Placeholder function for generating responses
-    return f"Generated response for: {prompt}"
+generate_response = lambda prompt, context: "I'm sorry, I don't have a response for that."

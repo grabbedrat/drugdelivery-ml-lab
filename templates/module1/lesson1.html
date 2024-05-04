@@ -60,17 +60,18 @@
     </ul>
     <div id="chat-container">
         <div id="chat-history"></div>
+      
         <div id="input-box">
-            <form hx-post="/chatbot" hx-target="#chat-history" hx-swap="beforeend">
-                <input type="hidden" name="context" value="Exercise 1: Molecular Representation - Convert the following molecules from SMILES to InChI and InChIKey:">
-                <textarea name="prompt" placeholder="Enter your message"></textarea>
-                <button type="submit">Submit</button>
-            </form>
+          <textarea name="initial_context" placeholder="The questions is question, the intended answer is answer. please provide insightful and constructive feeback to the student regarding their response."></textarea>
+      
+          <form id="chat-form">
+            <input type="hidden" name="context" value="">
+            <textarea name="prompt" placeholder="Enter your message"></textarea>
+            <button type="submit">Submit</button>
+          </form>
         </div>
-    </div>
+      </div>
 </section>
-
-
 
 <section>
     <h4>Exercise 2: Molecular Descriptors</h4>

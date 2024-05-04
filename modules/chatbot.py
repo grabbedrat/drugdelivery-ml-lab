@@ -18,7 +18,7 @@ def chatbot():
         messages.append({'id': message_id + 1, 'role': 'assistant', 'content': response})
 
         # Return the last message as HTML
-        return f'<p><strong>Student:</strong> {prompt} </p><p><strong>Assistant:</strong> {response}</p>'
+        return f'<p><strong>Student:</strong> {prompt} </p><p><strong>LLM:</strong> {response}</p>'
     except Exception as e:
         return str(e), 400
 

@@ -1,16 +1,24 @@
 $(document).ready(function() {
   var initialContext = $('textarea[name="initial_context"]');
   var chatHistory = $('#chat-history');
+  var prompt = $('textarea[name="prompt"]');
 
   $('#chat-form').on('submit', function(event) {
     event.preventDefault();
+
+    var initialContextValue = initialContext.val().trim() || initialContext.attr('placeholder');
+    var promptValue = prompt.val().trim();
+
+    if (promptValue === '') {
+      alert('Please enter a message in the prompt field.');
+      return;
+    }
 
     var chatHistoryParagraphs = chatHistory.find('p');
     var context = '';
 
     // Add initial context to the top of chat history if it's the first submit
-    if (chatHistoryParagraphs.length === 0 && initialContext.val().trim() !== '') {
-      var initialContextValue = initialContext.val().trim();
+    if (chatHistoryParagraphs.length === 0) {
       chatHistory.append('<p><strong>Initial Context:</strong> ' + initialContextValue + '</p>');
       initialContext.val('');
       initialContext.hide();
@@ -33,7 +41,7 @@ $(document).ready(function() {
       contentType: false,
       success: function(response) {
         chatHistory.append('<p>' + response + '</p>');
-        $('#chat-form textarea[name="prompt"]').val('');
+        prompt.val('');
       },
       error: function() {
         alert('An error occurred while submitting the form.');

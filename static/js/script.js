@@ -53,3 +53,18 @@ $(document).ready(function() {
     });
   });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+  var toggleButton = document.getElementById('toggle-gist');
+  var gistContainer = document.getElementById('gist-container');
+
+  toggleButton.addEventListener('click', function() {
+    if (gistContainer.style.display === 'none') {
+      gistContainer.style.display = 'block';
+      toggleButton.textContent = 'Hide Jupyter Notebook';
+    } else {
+      gistContainer.style.display = 'none';
+      toggleButton.textContent = 'View Jupyter Notebook';
+    }
+  });
+});

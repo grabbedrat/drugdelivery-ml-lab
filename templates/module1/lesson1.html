@@ -58,15 +58,18 @@
         <li>CN1C=NC2=C1C(=O)N(C)C(=O)N2C (Caffeine)</li>
         <li>CC(C)Cc1ccc(cc1)[C@H](C)C(=O)O (Ibuprofen)</li>
     </ul>
-    <div id="chat-history"></div>
-    <div id="input-box">
-        <textarea id="context-input" name="context" placeholder="Given the prompt :: Exercise 1: Molecular Representation - Convert the following molecules from SMILES to InChI and InChIKey: , and the answer $answer, generate an insightful and informative response. The correct answer is something along the lines of $generated_answer"></textarea>
-        <form hx-post="/chatbot" hx-target="#chat-history" hx-swap="beforeend">
-            <textarea name="prompt" placeholder=""></textarea>
-            <button type="submit">Submit</button>
-        </form>
+    <div id="chat-container">
+        <div id="chat-history"></div>
+        <div id="input-box">
+            <form hx-post="/chatbot" hx-target="#chat-history" hx-swap="beforeend">
+                <input type="hidden" name="context" value="Exercise 1: Molecular Representation - Convert the following molecules from SMILES to InChI and InChIKey:">
+                <textarea name="prompt" placeholder="Enter your message"></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
     </div>
 </section>
+
 
 
 <section>

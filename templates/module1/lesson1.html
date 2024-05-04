@@ -2,21 +2,15 @@
 {% block title %}Module 1: Lesson 1 - Molecular Representation and Descriptors{% endblock %}
 {% block content %}
 <h2>Lesson 1: Molecular Representation and Descriptors</h2>
-
 <p>In this lesson, we will explore various methods for representing molecules and calculating molecular descriptors, which are essential for computational drug discovery. Molecular representation allows us to encode the structure and properties of molecules in a format that can be processed by computers, while molecular descriptors provide numerical features that capture different aspects of a molecule's structure and properties.</p>
-
 <p>Throughout this lab, you will gain hands-on experience in representing molecules using various methods and calculating molecular descriptors using popular cheminformatics libraries. By the end of this lab, you will have a solid understanding of these concepts and their applications in drug discovery.</p>
-
 <a href="https://d3sfrlob0xoqmf.cloudfront.net/module1_lesson1.ipynb" download class="download-button">
   <i class="fas fa-download"></i> Download Jupyter Notebook
 </a>
-
 <button id="toggle-gist" class="toggle-button">View/Hide Jupyter Notebook</button>
-
 <div id="gist-container" style="display: none;">
   <script src="https://gist.github.com/grabbedrat/3f51fec9be17c0c280c774ba15097956.js"></script>
 </div>
-
 <h3>Learning Objectives</h3>
 <p>By the end of this lesson, you will be able to:</p>
 <ul>
@@ -67,14 +61,37 @@
     <div id="chat-container-1">
         <div id="chat-history-1"></div>
         <div id="input-box-1">
-            <textarea name="initial_context_1" rows="6" placeholder="The question asks about the differences between SMILES, InChI, and molecular graph representations. A good answer should cover the key differences, such as SMILES being a compact string notation, InChI being a standardized identifier, and molecular graphs capturing the connectivity and topology. If the student demonstrates a solid understanding, the feedback can include additional information on the advantages, limitations, and suitable use cases for each format to reinforce their knowledge."></textarea>
-            <form id="chat-form-1" class="chat-form">
-                <input type="hidden" name="context_1" value="">
-                <textarea name="prompt_1" placeholder="Enter your answer here"></textarea>
-                <button type="submit">Submit</button>
-            </form>
-        </div>
-    </div>
+            <textarea name="initial_context_1" rows="6">The key differences between SMILES, InChI, and molecular graph representations are:
+SMILES:
+
+Compact string notation based on connectivity
+Human-readable and widely used
+Not guaranteed to be unique for each molecule
+Suitable for storage, retrieval, and sharing of molecular structures
+
+InChI:
+
+Standardized, non-proprietary identifier
+More complex than SMILES, provides a unique, layered representation
+Includes information on stereochemistry, tautomers, and isotopes
+Useful for unambiguous identification of compounds across databases
+
+Molecular Graphs:
+
+Graph-based representation with atoms as nodes and bonds as edges
+Captures the topology and connectivity of the molecule
+Enables graph-based algorithms for property prediction and similarity searching
+More computationally expensive than string-based representations
+
+In summary, SMILES is compact and widely used, InChI provides a unique identifier, and molecular graphs are suitable for graph-based analyses. The choice depends on the specific application and required level of detail and uniqueness.
+</textarea>
+<form id="chat-form-1" class="chat-form">
+<input type="hidden" name="context_1" value="">
+<textarea name="prompt_1" placeholder="Enter your answer here"></textarea>
+<button type="submit">Submit</button>
+</form>
+</div>
+</div>
 </section>
 <section>
     <h4>Exercise 2: Molecular Descriptors</h4>
@@ -82,14 +99,23 @@
     <div id="chat-container-2">
         <div id="chat-history-2"></div>
         <div id="input-box-2">
-            <textarea name="initial_context_2" rows="6" placeholder="The question focuses on the importance of molecular descriptors in drug discovery and their use in machine learning models. A good answer should explain how molecular descriptors capture different aspects of a molecule's structure and properties, serving as numerical features for building predictive models. If the student shows a clear understanding, the feedback can include additional information on descriptor types, their significance in predicting drug properties, and the role of feature selection to reinforce their knowledge."></textarea>
-            <form id="chat-form-2" class="chat-form">
-                <input type="hidden" name="context_2" value="">
-                <textarea name="prompt_2" placeholder="Enter your answer here"></textarea>
-                <button type="submit">Submit</button>
-            </form>
-        </div>
-    </div>
+            <textarea name="initial_context_2" rows="6">Molecular descriptors play a crucial role in drug discovery by capturing various aspects of a molecule's structure and properties in the form of numerical features. These descriptors serve as the input for machine learning models, enabling the prediction of key properties such as bioactivity, toxicity, and pharmacokinetics.
+The main applications of molecular descriptors in drug discovery include:
+
+Quantitative Structure-Activity Relationship (QSAR) modeling: Descriptors are used to build predictive models that relate the structure of a molecule to its biological activity. These models help prioritize compounds for synthesis and testing.
+Virtual screening: Descriptors enable the rapid screening of large chemical libraries to identify compounds with desirable properties. This reduces the time and cost associated with experimental screening.
+Lead optimization: Descriptors guide the optimization of lead compounds by providing insights into the structural features that contribute to improved potency, selectivity, and pharmacokinetic properties.
+Diversity analysis: Descriptors help assess the diversity of chemical libraries and ensure adequate coverage of the chemical space, which is essential for identifying novel and active compounds.
+
+By capturing the relevant structural and physicochemical information, molecular descriptors enable data-driven decision-making in drug discovery, accelerating the identification of promising drug candidates and reducing the risk of failure in later stages of development.
+</textarea>
+<form id="chat-form-2" class="chat-form">
+<input type="hidden" name="context_2" value="">
+<textarea name="prompt_2" placeholder="Enter your answer here"></textarea>
+<button type="submit">Submit</button>
+</form>
+</div>
+</div>
 </section>
 <section>
     <h4>Exercise 3: Molecular Fingerprints</h4>
@@ -97,14 +123,24 @@
     <div id="chat-container-3">
         <div id="chat-history-3"></div>
         <div id="input-box-3">
-            <textarea name="initial_context_3" rows="6" placeholder="The question asks about the definition and application of molecular fingerprints in drug discovery. A good answer should explain that molecular fingerprints are binary or bit vector representations of molecular structures, encoding the presence or absence of certain substructures or features. The answer should also mention their use in similarity searching, clustering, and machine learning tasks. If the student provides a clear explanation, the feedback can include additional details on different types of fingerprints and their properties to reinforce their understanding."></textarea>
-            <form id="chat-form-3" class="chat-form">
-                <input type="hidden" name="context_3" value="">
-                <textarea name="prompt_3" placeholder="Enter your answer here"></textarea>
-                <button type="submit">Submit</button>
-            </form>
-        </div>
-    </div>
+            <textarea name="initial_context_3" rows="6">Molecular fingerprints are binary or bit vector representations of molecular structures, encoding the presence or absence of certain substructures or features. Each bit in the fingerprint corresponds to a specific structural pattern, and the entire fingerprint provides a compact representation of the molecule.
+The main applications of molecular fingerprints in drug discovery include:
+
+Similarity searching: Fingerprints enable rapid similarity comparisons between molecules. By calculating the Tanimoto coefficient or other similarity metrics, researchers can identify compounds with similar structures, which often exhibit similar biological activities.
+Clustering and diversity analysis: Fingerprints facilitate the grouping of molecules based on their structural similarity. This is useful for creating diverse libraries, identifying representative compounds, and understanding the structure-activity relationships within a dataset.
+Machine learning: Fingerprints serve as feature vectors for building machine learning models in drug discovery. They capture the relevant structural information and can be used for tasks such as activity prediction, target identification, and ADME/Tox modeling.
+Virtual screening: Fingerprints accelerate the virtual screening of large chemical libraries by enabling rapid similarity searches and filtering of compounds based on specific structural criteria.
+
+Different types of fingerprints, such as topological fingerprints, circular fingerprints (e.g., ECFP), and MACCS keys, capture different aspects of molecular structure and have their own strengths and limitations. The choice of fingerprint depends on the specific application and the desired balance between computational efficiency and information content.
+Molecular fingerprints are a powerful tool in drug discovery, providing a concise and computationally efficient representation of molecules for similarity searching, clustering, and machine learning tasks. They enable researchers to navigate the vast chemical space and identify promising compounds more effectively.
+</textarea>
+<form id="chat-form-3" class="chat-form">
+<input type="hidden" name="context_3" value="">
+<textarea name="prompt_3" placeholder="Enter your answer here"></textarea>
+<button type="submit">Submit</button>
+</form>
+</div>
+</div>
 </section>
 <section>
     <h4>Exercise 4: Molecular Similarity</h4>
@@ -112,33 +148,25 @@
     <div id="chat-container-4">
         <div id="chat-history-4"></div>
         <div id="input-box-4">
-            <textarea name="initial_context_4" rows="6" placeholder="The question focuses on the concept of molecular similarity and its significance in drug discovery. A good answer should define molecular similarity as a measure of how alike two molecules are based on their structural or functional properties. The answer should also discuss its importance in tasks such as identifying compounds with similar bioactivity, designing diverse libraries, and optimizing lead compounds. If the student demonstrates a clear understanding, the feedback can include additional information on similarity metrics and their applications to reinforce their knowledge."></textarea>
-            <form id="chat-form-4" class="chat-form">
-                <input type="hidden" name="context_4" value="">
-                <textarea name="prompt_4" placeholder="Enter your answer here"></textarea>
-                <button type="submit">Submit</button>
-            </form>
-        </div>
-    </div>
+            <textarea name="initial_context_4" rows="6">Molecular similarity is a measure of how alike two molecules are based on their structural or functional properties. It is a fundamental concept in drug discovery, as compounds with similar structures often exhibit similar biological activities and physicochemical properties.
+The importance of molecular similarity in drug discovery lies in its various applications:
+
+Identifying potential drug candidates: By searching for compounds similar to a known active molecule, researchers can identify new potential drug candidates that may have similar therapeutic effects. This is known as "scaffold hopping" or "lead hopping."
+Designing focused libraries: Similarity-based methods help in creating focused libraries of compounds that share structural features with known active compounds. These libraries have a higher probability of containing active compounds, thus increasing the efficiency of drug discovery efforts.
+Optimizing lead compounds: Similarity analysis guides the optimization of lead compounds by identifying structural modifications that improve potency, selectivity, or pharmacokinetic properties while maintaining the desired activity.
+Predicting off-target effects: Compounds with high similarity to known drugs or bioactive molecules may have similar off-target interactions. Similarity analysis helps in anticipating and mitigating potential side effects or toxicity issues.
+
+Molecular similarity can be assessed using various methods, such as fingerprint-based similarity (e.g., Tanimoto coefficient), shape-based similarity, or pharmacophore-based similarity. The choice of similarity metric depends on the specific research question and the available data.
+By leveraging the principle that structurally similar compounds tend to have similar properties, molecular similarity enables researchers to navigate the chemical space efficiently, identify promising drug candidates, and make informed decisions in the drug discovery process. It is a powerful tool for rational drug design and optimization.
+</textarea>
+<form id="chat-form-4" class="chat-form">
+<input type="hidden" name="context_4" value="">
+<textarea name="prompt_4" placeholder="Enter your answer here"></textarea>
+<button type="submit">Submit</button>
+</form>
+</div>
+</div>
 </section>
-<section id="real-world-examples">
-    <h2>Real-world Examples and Case Studies</h2>
-    <p>Explore real-world applications of molecular representation and descriptors in drug discovery projects.</p>
-
-    <div class="case-study">
-      <h3>Case Study 1: Virtual Screening for Novel Antibiotics</h3>
-      <img src="antibiotics.jpg" alt="Virtual screening for antibiotics" class="case-study-image">
-      <p>In this case study, researchers used molecular representation and descriptors to virtually screen a large library of compounds to identify novel antibiotic candidates. By encoding molecules as fingerprints and calculating physicochemical properties, they were able to prioritize compounds with desirable characteristics for experimental testing.</p>
-      <a href="antibiotics-paper.pdf" target="_blank" class="button">Read More</a>
-    </div>
-
-    <div class="case-study">
-      <h3>Case Study 2: QSAR Modeling for Drug Toxicity Prediction</h3>
-      <img src="toxicity.jpg" alt="QSAR modeling for drug toxicity prediction" class="case-study-image">
-      <p>Researchers developed a Quantitative Structure-Activity Relationship (QSAR) model to predict the toxicity of drug candidates. By calculating a wide range of molecular descriptors and building machine learning models, they were able to accurately predict the toxicity profile of new compounds, reducing the need for extensive animal testing.</p>
-      <a href="toxicity-paper.pdf" target="_blank" class="button">Read More</a>
-    </div>
-  </section>
 <h3>Additional Resources</h3>
 <ul>
     <li><a href="https://www.daylight.com/dayhtml/doc/theory/theory.smiles.html" target="_blank">SMILES - A Simplified Chemical Language</a></li>

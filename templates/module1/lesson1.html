@@ -49,6 +49,7 @@
     </p>
 </section>
 <h3>Exercises</h3>
+
 <section>
     <h4>Exercise 1: Molecular Representation</h4>
     <p>Convert the following molecules from SMILES to InChI and InChIKey:</p>
@@ -57,13 +58,17 @@
         <li>CN1C=NC2=C1C(=O)N(C)C(=O)N2C (Caffeine)</li>
         <li>CC(C)Cc1ccc(cc1)[C@H](C)C(=O)O (Ibuprofen)</li>
     </ul>
-    <form hx-post="/api/generate" hx-target="#generated-content-output1">
-        <textarea name="context" placeholder="Given the prompt :: Exercise 1: Molecular Representation - Convert the following molecules from SMILES to InChI and InChIKey: , and the answer $answer, generate an insightful and informative response. The correct answer is something along the lines of $generated_answer"></textarea>
-        <textarea name="prompt" placeholder=""></textarea>
-        <button type="submit">Submit</button>
-    </form>
-    <div id="generated-content-output1"></div>
+    <div id="chat-history"></div>
+    <div id="input-box">
+        <textarea id="context-input" name="context" placeholder="Given the prompt :: Exercise 1: Molecular Representation - Convert the following molecules from SMILES to InChI and InChIKey: , and the answer $answer, generate an insightful and informative response. The correct answer is something along the lines of $generated_answer"></textarea>
+        <form hx-post="/chatbot" hx-target="#chat-history" hx-swap="beforeend">
+            <textarea name="prompt" placeholder=""></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </div>
 </section>
+
+
 <section>
     <h4>Exercise 2: Molecular Descriptors</h4>
     <p>Calculate the following descriptors for the given molecules using RDKit:</p>

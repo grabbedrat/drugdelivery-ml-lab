@@ -2,10 +2,73 @@
 {% block title %}Module 1: Lesson 1 - Molecular Representation and Descriptors{% endblock %}
 {% block content %}
 <h2>Lesson 1: Molecular Representation and Descriptors</h2>
+
 <p>In this lesson, we will explore various methods for representing molecules and calculating molecular descriptors, which are essential for computational drug discovery. Molecular representation allows us to encode the structure and properties of molecules in a format that can be processed by computers, while molecular descriptors provide numerical features that capture different aspects of a molecule's structure and properties.</p>
+
 <p>Throughout this lab, you will gain hands-on experience in representing molecules using various methods and calculating molecular descriptors using popular cheminformatics libraries. By the end of this lab, you will have a solid understanding of these concepts and their applications in drug discovery.</p>
-<a href="module1_lesson1.ipynb" target="_blank" class="button">Launch Jupyter Notebook</a>
+
+<a href="module1_lesson1.ipynb" download class="download-button">
+  <i class="fas fa-download"></i> Download Jupyter Notebook
+</a>
+
+<button id="toggle-gist" class="toggle-button">View/Hide Jupyter Notebook</button>
+
+<div id="gist-container" style="display: none;">
+  <script src="https://gist.github.com/grabbedrat/3f51fec9be17c0c280c774ba15097956.js"></script>
+</div>
+
 <h3>Learning Objectives</h3>
+
+<script>
+document.getElementById('toggle-gist').addEventListener('click', function() {
+  var gistContainer = document.getElementById('gist-container');
+  if (gistContainer.style.display === 'none') {
+    gistContainer.style.display = 'block';
+    this.textContent = 'Hide Jupyter Notebook';
+  } else {
+    gistContainer.style.display = 'none';
+    this.textContent = 'View Jupyter Notebook';
+  }
+});
+</script>
+
+<style>
+.download-button {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: #4CAF50;
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.download-button:hover {
+  background-color: #45a049;
+}
+
+.download-button i {
+  margin-right: 8px;
+}
+
+.toggle-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #f1f1f1;
+  color: #333;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 10px;
+}
+
+.toggle-button:hover {
+  background-color: #ddd;
+}
+</style>
 <p>By the end of this lesson, you will be able to:</p>
 <ul>
     <li>Understand different methods for representing molecules and their advantages and limitations.</li>

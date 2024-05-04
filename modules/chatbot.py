@@ -1,5 +1,9 @@
 from flask import Blueprint, request, jsonify, render_template
 from openai import OpenAI
+import os
+import openai
+
+openai.api_key = os.getenv('OPENAI_API_KEY')
 
 client = OpenAI(api_key='sk-proj-wFfDKarW3XQQNbzbb6ihT3BlbkFJZfPM0ShQlxehp7eIX6Ld')
 
@@ -28,7 +32,7 @@ def chatbot():
             messages.append({'id': message_id + 1, 'role': 'assistant', 'content': response})
 
             # Return the last message as HTML
-            return f'<p><strong>Student:</strong> {prompt} </p><p><strong>LLM:</strong> {response}</p>'
+            return f'<p><strong>Student:</strong> {prompt} </p><p><strong>gpt-3.5-turbo-instruct:</strong> {response}</p>'
         else:
             return "Invalid request", 400
 

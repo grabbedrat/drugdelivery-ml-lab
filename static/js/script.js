@@ -1,10 +1,12 @@
 $(document).ready(function() {
-  var initialContext = $('textarea[name="initial_context"]');
-  var chatHistory = $('#chat-history');
-  var prompt = $('textarea[name="prompt"]');
-
-  $('#chat-form').on('submit', function(event) {
+  $('.chat-form').on('submit', function(event) {
     event.preventDefault();
+
+    var chatContainer = $(this).closest('[id^=chat-container]');
+    var chatHistory = chatContainer.find('[id^=chat-history]');
+    var initialContext = chatContainer.find('[name^=initial_context]');
+    var prompt = chatContainer.find('[name^=prompt]');
+    var context = chatContainer.find('[name^=context]');
 
     var initialContextValue = initialContext.val().trim() || initialContext.attr('placeholder');
     var promptValue = prompt.val().trim();
@@ -15,7 +17,7 @@ $(document).ready(function() {
     }
 
     var chatHistoryParagraphs = chatHistory.find('p');
-    var context = '';
+    var contextValue = '';
 
     // Add initial context to the top of chat history if it's the first submit
     if (chatHistoryParagraphs.length === 0) {
@@ -26,12 +28,14 @@ $(document).ready(function() {
 
     chatHistoryParagraphs = chatHistory.find('p');
     chatHistoryParagraphs.each(function() {
-      context += $(this).text() + '\n';
+      contextValue += $(this).text() + '\n';
     });
 
-    $('input[name="context"]').val(context);
+    context.val(contextValue);
 
-    var formData = new FormData(this);
+    var formData = new FormData();
+    formData.append(prompt.attr('name'), promptValue);
+    formData.append(context.attr('name'), contextValue);
 
     $.ajax({
       type: 'POST',

@@ -1,36 +1,37 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 
-{% block title %}Module 5: Toxicity Prediction and Adverse Effect Analysis{% endblock %}
+{% block title %}Module 5: Drug Repurposing and Combination Therapy{% endblock %}
 
 {% block content %}
-<h2>Module 5: Toxicity Prediction and Adverse Effect Analysis</h2>
+<section>
+    <h2>Module 5: Drug Repurposing and Combination Therapy</h2>
+    <p>This module explores the computational approaches for drug repurposing and identifying synergistic drug combinations. You'll learn about network-based methods, signature-based techniques, and clinical and regulatory considerations.</p>
+</section>
 
-<p>In this module, you will learn about predicting toxicity and analyzing adverse effects of drugs. The module covers the following topics:</p>
+<section>
+    <h3>Topics Covered</h3>
+    <ul>
+        <li><a href="#">Network-Based Approaches for Drug Repurposing</a></li>
+        <li><a href="#">Signature-Based Methods and Transcriptomics in Repurposing</a></li>
+        <li><a href="#">Identifying Synergistic Drug Combinations</a></li>
+        <li><a href="#">Clinical and Regulatory Considerations in Drug Repurposing</a></li>
+    </ul>
+</section>
 
-<ul>
-    <li>Lesson 1: Toxicity Databases and Data Curation</li>
-    <li>Lesson 2: QSAR Models for Toxicity Prediction</li>
-    <li>Lesson 3: Adverse Event Mining and Analysis</li>
-    <li>Case Study: Assessing the Toxicity Risk of a Drug Candidate</li>
-</ul>
+<section>
+    <h3>Case Study and Mini-Project</h3>
+    <ul>
+        <li><a href="#">Case Study: Repurposing Approved Drugs for Rare Diseases</a></li>
+        <li><a href="#">Mini-Project: Drug Repurposing using Machine Learning and Network Analysis</a></li>
+    </ul>
+</section>
 
-<h3>Learning Objectives</h3>
-
-<p>By the end of this module, you will be able to:</p>
-
-<ul>
-    <li>Understand and curate toxicity databases.</li>
-    <li>Develop and apply QSAR models for toxicity prediction.</li>
-    <li>Perform adverse event mining and analysis.</li>
-    <li>Assess the toxicity risk of a drug candidate through a case study.</li>
-</ul>
-
-<h3>Lessons</h3>
-
-<ul>
-    <li><a href="{{ url_for('module5.lesson1') }}">Lesson 1: Toxicity Databases and Data Curation</a></li>
-    <li><a href="{{ url_for('module5.lesson2') }}">Lesson 2: QSAR Models for Toxicity Prediction</a></li>
-    <li><a href="{{ url_for('module5.lesson3') }}">Lesson 3: Adverse Event Mining and Analysis</a></li>
-    <li><a href="{{ url_for('module5.case_study') }}">Case Study: Assessing the Toxicity Risk of a Drug Candidate</a></li>
-</ul>
+<section>
+    <h3>Data Sources</h3>
+    <ul>
+        <li><a href="#">DrugBank</a></li>
+        <li><a href="#">LINCS Database</a></li>
+        <li><a href="#">FDA Adverse Event Reporting System (FAERS)</a></li>
+    </ul>
+</section>
 {% endblock %}

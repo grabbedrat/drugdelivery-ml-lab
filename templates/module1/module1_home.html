@@ -1,27 +1,37 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 
-{% block title %}Module 1: Fundamentals of Computational Drug Discovery{% endblock %}
+{% block title %}Module 1: Foundations of Drug Discovery{% endblock %}
 
 {% block content %}
-<h2>Module 1: Fundamentals of Computational Drug Discovery</h2>
+<section>
+    <h2>Module 1: Foundations of Drug Discovery</h2>
+    <p>This module lays the groundwork for understanding the drug discovery process. You'll learn about the drug discovery pipeline, molecular representation and similarity measures, chemical space exploration, data preprocessing, and visualization techniques.</p>
+</section>
 
-<p>In this module, you will learn the fundamental concepts and techniques used in computational drug discovery. The module covers the following topics:</p>
+<section>
+    <h3>Topics Covered</h3>
+    <ul>
+        <li><a href="{{ url_for('module1.topic1') }}">Introduction to the Drug Discovery Pipeline</a></li>
+        <li><a href="{{ url_for('module1.topic2') }}">Molecular Representation and Similarity Measures</a></li>
+        <li><a href="{{ url_for('module1.topic3') }}">Exploring Chemical Space and Compound Libraries</a></li>
+        <li><a href="{{ url_for('module1.topic4') }}">Data Preprocessing and Visualization Techniques</a></li>
+    </ul>
+</section>
 
-<h3>Learning Objectives</h3>
+<section>
+    <h3>Case Study and Mini-Project</h3>
+    <ul>
+        <li><a href="{{ url_for('module1.case_study') }}">Case Study: Navigating the Chemical Universe for Hit Identification</a></li>
+        <li><a href="{{ url_for('module1.mini_project') }}">Mini-Project: Building a Molecular Similarity Search Tool</a></li>
+    </ul>
+</section>
 
-<p>By the end of this module, you will be able to:</p>
-
-<ul>
-    <li>Understand various molecular representation methods and descriptors used in drug discovery.</li>
-    <li>Preprocess and engineer features from drug-related data.</li>
-    <li>Understand the basic concepts of machine learning and their applications in drug discovery.</li>
-</ul>
-
-<h3>Lessons</h3>
-
-<ul>
-    <li><a href="{{ url_for('module1.lesson1') }}">Lesson 1: Molecular Representation and Descriptors</a></li>
-    <li><a href="{{ url_for('module1.lesson2') }}">Lesson 2: Data Preprocessing and Feature Engineering</a></li>
-    <li><a href="{{ url_for('module1.lesson3') }}">Lesson 3: Machine Learning Basics for Drug Discovery</a></li>
-</ul>
+<section>
+    <h3>Data Sources</h3>
+    <ul>
+        <li><a href="#">PubChem Compound Database</a></li>
+        <li><a href="#">DrugBank</a></li>
+        <li><a href="#">ChEMBL</a></li>
+    </ul>
+</section>
 {% endblock %}

@@ -1,36 +1,37 @@
-{% extends 'base.html' %}
+{% extends "base.html" %}
 
-{% block title %}Module 3: Drug-Target Interaction and Molecular Modeling{% endblock %}
+{% block title %}Module 3: Structure-Based Drug Design{% endblock %}
 
 {% block content %}
-<h2>Module 3: Drug-Target Interaction and Molecular Modeling</h2>
+<section>
+    <h2>Module 3: Structure-Based Drug Design</h2>
+    <p>This module focuses on structure-based drug design approaches, including understanding protein-ligand interactions, molecular docking, virtual screening strategies, and lead optimization techniques.</p>
+</section>
 
-<p>In this module, you will learn about drug-target interactions and molecular modeling techniques. The module covers the following topics:</p>
+<section>
+    <h3>Topics Covered</h3>
+    <ul>
+        <li><a href="#">Understanding Protein-Ligand Interactions</a></li>
+        <li><a href="#">Molecular Docking: Principles and Applications</a></li>
+        <li><a href="#">Virtual Screening Strategies for Lead Identification</a></li>
+        <li><a href="#">Structure-Based Lead Optimization Techniques</a></li>
+    </ul>
+</section>
 
-<ul>
-    <li>Lesson 1: Molecular Docking and Scoring Functions</li>
-    <li>Lesson 2: Molecular Dynamics Simulations</li>
-    <li>Lesson 3: Machine Learning for Interaction Prediction</li>
-    <li>Case Study: Identifying Potential Drug-Target Interactions</li>
-</ul>
+<section>
+    <h3>Case Study and Mini-Project</h3>
+    <ul>
+        <li><a href="#">Case Study: Designing Selective Kinase Inhibitors</a></li>
+        <li><a href="#">Mini-Project: Virtual Screening Campaign for a Novel Drug Target</a></li>
+    </ul>
+</section>
 
-<h3>Learning Objectives</h3>
-
-<p>By the end of this module, you will be able to:</p>
-
-<ul>
-    <li>Understand and apply molecular docking and scoring functions.</li>
-    <li>Understand and perform molecular dynamics simulations.</li>
-    <li>Apply machine learning techniques for drug-target interaction prediction.</li>
-    <li>Analyze a case study on identifying potential drug-target interactions.</li>
-</ul>
-
-<h3>Lessons</h3>
-
-<ul>
-    <li><a href="{{ url_for('module3.lesson1') }}">Lesson 1: Molecular Docking and Scoring Functions</a></li>
-    <li><a href="{{ url_for('module3.lesson2') }}">Lesson 2: Molecular Dynamics Simulations</a></li>
-    <li><a href="{{ url_for('module3.lesson3') }}">Lesson 3: Machine Learning for Interaction Prediction</a></li>
-    <li><a href="{{ url_for('module3.case_study') }}">Case Study: Identifying Potential Drug-Target Interactions</a></li>
-</ul>
+<section>
+    <h3>Data Sources</h3>
+    <ul>
+        <li><a href="#">Protein Data Bank (PDB)</a></li>
+        <li><a href="#">Directory of Useful Decoys, Enhanced (DUD-E)</a></li>
+        <li><a href="#">ChEMBL</a></li>
+    </ul>
+</section>
 {% endblock %}

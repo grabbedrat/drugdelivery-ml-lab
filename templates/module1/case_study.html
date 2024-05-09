@@ -1,0 +1,69 @@
+
+{% extends 'base.html' %}
+{% block title %}Module 1: Case Study - Navigating the Chemical Universe for Hit Identification{% endblock %}
+{% block content %}
+<h2>Case Study: Navigating the Chemical Universe for Hit Identification</h2>
+<h3>Learning Objectives</h3>
+<ul>
+    <li>Apply molecular representation and similarity techniques to a real-world drug discovery problem</li>
+    <li>Understand the workflow of hit identification using computational methods</li>
+    <li>Analyze and interpret the results of a virtual screening campaign</li>
+</ul>
+<p>In this case study, we will explore a real-world example of how computational methods are used to navigate the chemical space and identify hit compounds for a given drug target. We will go through the workflow of a virtual screening campaign and analyze the results to identify promising compounds for further optimization.</p>
+<h3>Case Study Overview</h3>
+<ul>
+    <li>Problem statement: Identify hit compounds for a novel kinase target involved in cancer.</li>
+    <li>Dataset: A large virtual library of commercially available compounds.</li>
+    <li>Workflow:
+        <ol>
+            <li>Molecular representation: Convert compounds to suitable representations (e.g., SMILES, fingerprints).</li>
+            <li>Similarity search: Perform a similarity search against a reference compound known to bind to the target.</li>
+            <li>Structure-based virtual screening: Dock top-ranking compounds into the target's binding site.</li>
+            <li>Hit selection: Analyze docking results and select hits based on binding affinity and interactions.</li>
+        </ol>
+    </li>
+</ul>
+<h3>Results and Analysis</h3>
+<ul>
+    <li>Similarity search:
+        <ul>
+            <li>Top 1,000 compounds selected based on Tanimoto similarity to the reference compound.</li>
+            <li>Diverse chemical scaffolds and functionalities observed among the top-ranking compounds.</li>
+        </ul>
+    </li>
+    <li>Structure-based virtual screening:
+        <ul>
+            <li>Docking results reveal several compounds with favorable binding affinities and interactions.</li>
+            <li>Key interactions with the hinge region and ATP-binding pocket of the kinase are identified.</li>
+        </ul>
+    </li>
+    <li>Hit selection:
+        <ul>
+            <li>Ten compounds are selected as hits based on their docking scores and interaction profiles.</li>
+            <li>Hits represent diverse chemical scaffolds and show potential for further optimization.</li>
+        </ul>
+    </li>
+</ul>
+<h3>Conclusion and Next Steps</h3>
+<ul>
+    <li>The virtual screening campaign successfully identified hit compounds for the novel kinase target.</li>
+    <li>The selected hits provide a starting point for further optimization and biological evaluation.</li>
+    <li>Next steps include:
+        <ul>
+            <li>Experimental validation of the hits using in vitro assays.</li>
+            <li>Structure-activity relationship (SAR) studies to optimize the potency and selectivity of the hits.</li>
+            <li>ADME/Tox profiling to assess the drug-like properties of the optimized leads.</li>
+        </ul>
+    </li>
+</ul>
+<h3>Reflection Questions</h3>
+<ul>
+    <li>How did the molecular representation and similarity techniques contribute to the success of the virtual screening campaign?</li>
+    <li>What are the advantages and limitations of using computational methods for hit identification compared to experimental screening?</li>
+    <li>How can the hits identified in this case study be further optimized to develop potential drug candidates?</li>
+</ul>
+<div class="navigation">
+    <a href="{{ url_for('module1.topic4') }}" class="previous-button">Previous Topic: Data Preprocessing and Visualization Techniques</a>
+    <a href="{{ url_for('module1.mini_project') }}" class="next-button">Next: Mini-Project - Building a Molecular Similarity Search Tool</a>
+</div>
+{% endblock %}

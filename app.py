@@ -7,6 +7,9 @@ from modules.module4.routes import module4
 from modules.module5.routes import module5
 from modules.chatbot import chatbot_bp
 
+from utils import register_context_processors
+
+
 app = Flask(__name__)
 
 app.register_blueprint(module1)
@@ -15,6 +18,8 @@ app.register_blueprint(module3)
 app.register_blueprint(module4)
 app.register_blueprint(module5)
 app.register_blueprint(chatbot_bp)
+
+register_context_processors(app)
 
 @app.route('/')
 def home():

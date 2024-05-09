@@ -1,0 +1,29 @@
+<nav>
+    <ul class="menu">
+        <li><a href="{{ url_for('home') }}">Home</a></li>
+        <li><a href="{{ url_for('data_exploration') }}">Data Exploration</a></li>
+        <li class="dropdown">
+            <a href="#" class="dropdown-toggle">Modules</a>
+            <ul class="dropdown-menu">
+                <!-- Loop through the modules and generate the dropdown menu items -->
+                {% for module in modules %}
+                <li class="dropdown-submenu">
+                    <a href="{{ url_for(module.home_url) }}">{{ module.name }}</a>
+                    <ul class="dropdown-menu">
+                        {% for topic in module.topics %}
+                        <li><a href="{{ url_for(topic.url) }}">{{ topic.name }}</a></li>
+                        {% endfor %}
+                        {% if module.case_study %}
+                        <li><a href="{{ url_for(module.case_study.url) }}">{{ module.case_study.name }}</a></li>
+                        {% endif %}
+                        {% if module.mini_project %}
+                        <li><a href="{{ url_for(module.mini_project.url) }}">{{ module.mini_project.name }}</a></li>
+                        {% endif %}
+                    </ul>
+                </li>
+                {% endfor %}
+            </ul>
+        </li>
+        <li><a href="#">Resources</a></li>
+    </ul>
+</nav>

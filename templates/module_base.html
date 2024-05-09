@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="module-content">
+    {% block module_content %}{% endblock %}
+</div>
+
+<div class="module-navigation">
+    {% if prev_section_url %}
+    <a href="{{ prev_section_url }}" class="btn btn-secondary">Previous Section</a>
+    {% endif %}
+    {% if next_section_url %}
+    <a href="{{ next_section_url }}" class="btn btn-primary">Next Section</a>
+    {% endif %}
+</div>
+{% endblock %}

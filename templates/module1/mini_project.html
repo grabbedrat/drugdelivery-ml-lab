@@ -1,67 +1,79 @@
 {% extends 'base.html' %}
+
 {% block title %}Module 1: Mini-Project - Building a Molecular Similarity Search Tool{% endblock %}
+
 {% block content %}
 <h2>Mini-Project: Building a Molecular Similarity Search Tool</h2>
-<h3>Learning Objectives</h3>
-<ul>
-    <li>Implement a molecular similarity search algorithm</li>
-    <li>Utilize a cheminformatics library to handle molecular representations and calculations</li>
-    <li>Develop a user-friendly interface for the similarity search tool</li>
-</ul>
-<p>In this mini-project, you will build a molecular similarity search tool using Python and the RDKit library. The tool will allow users to input a reference molecule and search for similar compounds within a given database. You will learn how to handle molecular representations, calculate similarity scores, and present the results in a user-friendly manner.</p>
+
+<h3>Introduction</h3>
+<p>In the field of drug discovery, identifying compounds with structural similarity to known active molecules can be a powerful strategy for finding potential drug candidates. This mini-project will challenge you to build a molecular similarity search tool using Python and the powerful RDKit library.</p>
+
+<p>Your task is to develop a user-friendly application that allows researchers to input a reference molecule and search through a database of compounds to find those with similar structures. This tool can be invaluable in the early stages of drug discovery, enabling researchers to explore the chemical space efficiently and prioritize compounds for further evaluation.</p>
+
+<h3>Project Objectives</h3>
+<p>By completing this mini-project, you will:</p>
+<ol>
+    <li>Gain hands-on experience with molecular representations and similarity calculations using RDKit.</li>
+    <li>Implement an efficient similarity search algorithm to identify structurally similar compounds.</li>
+    <li>Develop a user-friendly interface for inputting reference molecules and search parameters.</li>
+    <li>Visualize and present the search results in a clear and informative manner.</li>
+</ol>
+
 <h3>Project Overview</h3>
 <ol>
-    <li>Data Preparation:
+    <li>
+        <h4>Data Preparation</h4>
         <ul>
             <li>Curate a database of molecules in SMILES format.</li>
             <li>Preprocess the molecules and generate suitable representations (e.g., Morgan fingerprints).</li>
         </ul>
     </li>
-    <li>Similarity Search Algorithm:
+    <li>
+        <h4>Similarity Search Algorithm</h4>
         <ul>
             <li>Implement a function to calculate the similarity between two molecules using the Tanimoto coefficient.</li>
             <li>Develop a search algorithm to find the most similar compounds to a given reference molecule.</li>
         </ul>
     </li>
-    <li>User Interface:
+    <li>
+        <h4>User Interface</h4>
         <ul>
             <li>Create a command-line interface for users to input the reference molecule and search parameters.</li>
             <li>Display the top-N most similar compounds along with their similarity scores.</li>
         </ul>
     </li>
-    <li>Evaluation and Refinement:
+    <li>
+        <h4>Evaluation and Refinement</h4>
         <ul>
             <li>Test the similarity search tool on a set of known similar compounds and assess its performance.</li>
             <li>Refine the algorithm and user interface based on the evaluation results.</li>
         </ul>
     </li>
 </ol>
+
 <h3>Getting Started</h3>
 <p>To get started with the mini-project, follow these steps:</p>
 <ol>
     <li>Install the required dependencies, including Python and the RDKit library.</li>
-    <li>Download the starter code and dataset from the provided links.</li>
-    <li>Open the Jupyter notebooks in the following order and complete the tasks in each notebook:
-        <ul>
-            <li><a href="module1_miniproject_notebook1.ipynb" download>Notebook 1: Data Preparation</a></li>
-            <li><a href="module1_miniproject_notebook2.ipynb" download>Notebook 2: Similarity Search Algorithm</a></li>
-            <li><a href="module1_miniproject_notebook3.ipynb" download>Notebook 3: User Interface</a></li>
-            <li><a href="module1_miniproject_notebook4.ipynb" download>Notebook 4: Evaluation and Refinement</a></li>
-        </ul>
-    </li>
-    <li>Once you have completed all the notebooks, combine the code into a single Python script and test the final similarity search tool.</li>
+    <li>Download the starter code and dataset from the provided link: <a href="module1_miniproject.ipynb" download>Mini-Project Notebook</a></li>
+    <li>Open the Jupyter notebook and complete the tasks outlined in each section.</li>
+    <li>Once you have completed the notebook, combine the code into a single Python script and test the final similarity search tool.</li>
 </ol>
+
 <h3>Submission Guidelines</h3>
 <p>To submit your mini-project, follow these guidelines:</p>
 <ul>
-    <li>Combine all the code from the Jupyter notebooks into a single Python script.</li>
+    <li>Combine the code from the Jupyter notebook into a single Python script.</li>
     <li>Include a README file with instructions on how to run the similarity search tool and any dependencies required.</li>
     <li>Create a ZIP file containing the Python script, README file, and any additional files or datasets used.</li>
     <li>Upload the ZIP file to the designated submission portal or email it to the instructor.</li>
 </ul>
+
 <p>Good luck with the mini-project! If you have any questions or need assistance, don't hesitate to reach out to the instructor or your peers.</p>
+
 <div class="navigation">
     <a href="{{ url_for('module1.case_study') }}" class="previous-button">Previous: Case Study - Navigating the Chemical Universe for Hit Identification</a>
-    <a href="{{ url_for('module2.topic1') }}" class="next-button">Next Module: Machine Learning for Drug Property Prediction</a>
+    <a href="#" class="next-button">Next Module: Machine Learning for Drug Property Prediction</a>
 </div>
+
 {% endblock %}

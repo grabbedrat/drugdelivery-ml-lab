@@ -8,114 +8,15 @@
        <script src="https://unpkg.com/htmx.org@1.7.0"></script>
    </head>
    <body>
-       <header>
-           <h1>Computational Drug Discovery and Delivery: From Molecules to Medicines</h1>
-       </header>
-       <nav>
-           <ul class="menu">
-               <li><a href="{{ url_for('home') }}">Home</a></li>
-               <li><a href="{{ url_for('data_exploration') }}">Data Exploration</a></li>
-               <li class="dropdown">
-                   <a href="#" class="dropdown-toggle">Modules</a>
-                   <ul class="dropdown-menu">
-                       <li class="dropdown-submenu">
-                           <a href="{{ url_for('module1.module1_home') }}">Module 1: Foundations of Drug Discovery</a>
-                           <ul class="dropdown-menu">
-                               <li><a href="{{ url_for('module1.topic1') }}">Introduction to the Drug Discovery Pipeline</a></li>
-                               <li><a href="{{ url_for('module1.topic2') }}">Molecular Representation and Similarity Measures</a></li>
-                               <li><a href="{{ url_for('module1.topic3') }}">Exploring Chemical Space and Compound Libraries</a></li>
-                               <li><a href="{{ url_for('module1.topic4') }}">Data Preprocessing and Visualization Techniques</a></li>
-                               <li><a href="{{ url_for('module1.case_study') }}">Case Study: Navigating the Chemical Universe for Hit Identification</a></li>
-                               <li><a href="{{ url_for('module1.mini_project') }}">Mini-Project: Building a Molecular Similarity Search Tool</a></li>
-                           </ul>
-                       </li>
-                       <li class="dropdown-submenu">
-                           <a href="{{ url_for('module2.module2_home') }}">Module 2: Machine Learning for Drug Property Prediction</a>
-                           <ul class="dropdown-menu">
-                               <li><a href="#">Regression and Classification Models in Drug Discovery</a></li>
-                               <li><a href="#">Feature Selection and Engineering Techniques</a></li>
-                               <li><a href="#">Model Evaluation, Validation, and Optimization</a></li>
-                               <li><a href="#">Predicting ADME Properties using Machine Learning</a></li>
-                               <li><a href="#">Case Study: Developing a Predictive Model for Drug Solubility</a></li>
-                               <li><a href="#">Mini-Project: QSAR Modeling Challenge for Drug Property Prediction</a></li>
-                           </ul>
-                       </li>
-                       <li class="dropdown-submenu">
-                           <a href="{{ url_for('module3.module3_home') }}">Module 3: Structure-Based Drug Design</a>
-                           <ul class="dropdown-menu">
-                               <li><a href="#">Understanding Protein-Ligand Interactions</a></li>
-                               <li><a href="#">Molecular Docking: Principles and Applications</a></li>
-                               <li><a href="#">Virtual Screening Strategies for Lead Identification</a></li>
-                               <li><a href="#">Structure-Based Lead Optimization Techniques</a></li>
-                               <li><a href="#">Case Study: Designing Selective Kinase Inhibitors</a></li>
-                               <li><a href="#">Mini-Project: Virtual Screening Campaign for a Novel Drug Target</a></li>
-                           </ul>
-                       </li>
-                       <li class="dropdown-submenu">
-                           <a href="{{ url_for('module4.module4_home') }}">Module 4: Ligand-Based Drug Design</a>
-                           <ul class="dropdown-menu">
-                               <li><a href="#">Pharmacophore Modeling and its Applications</a></li>
-                               <li><a href="#">Quantitative Structure-Activity Relationship (QSAR) Modeling</a></li>
-                               <li><a href="#">Similarity Searching and Clustering in Ligand-Based Design</a></li>
-                               <li><a href="#">Integration of Ligand and Structure-Based Approaches</a></li>
-                               <li><a href="#">Case Study: Designing Potent and Selective GPCR Ligands</a></li>
-                               <li><a href="#">Mini-Project: Ligand-Based Virtual Screening and Optimization</a></li>
-                           </ul>
-                       </li>
-                       <li class="dropdown-submenu">
-                           <a href="{{ url_for('module5.module5_home') }}">Module 5: Drug Repurposing and Combination Therapy</a>
-                           <ul class="dropdown-menu">
-                               <li><a href="#">Network-Based Approaches for Drug Repurposing</a></li>
-                               <li><a href="#">Signature-Based Methods and Transcriptomics in Repurposing</a></li>
-                               <li><a href="#">Identifying Synergistic Drug Combinations</a></li>
-                               <li><a href="#">Clinical and Regulatory Considerations in Drug Repurposing</a></li>
-                               <li><a href="#">Case Study: Repurposing Approved Drugs for Rare Diseases</a></li>
-                               <li><a href="#">Mini-Project: Drug Repurposing using Machine Learning and Network Analysis</a></li>
-                           </ul>
-                       </li>
-                       <li class="dropdown-submenu">
-                           <a href="{{ url_for('module6.module6_home') }}">Module 6: Toxicity Prediction and Risk Assessment</a>
-                           <ul class="dropdown-menu">
-                               <li><a href="#">Mechanisms of Drug Toxicity and Adverse Events</a></li>
-                               <li><a href="#">QSAR Models for Toxicity Prediction</a></li>
-                               <li><a href="#">Mining and Analysis of Adverse Event Databases</a></li>
-                               <li><a href="#">Integrating Toxicity Prediction in Drug Development</a></li>
-                               <li><a href="#">Case Study: Assessing the Cardiac Toxicity Risk of Drug Candidates</a></li>
-                               <li><a href="#">Mini-Project: Building a Multi-Endpoint Toxicity Prediction Model</a></li>
-                           </ul>
-                       </li>
-                       <li class="dropdown-submenu">
-                           <a href="{{ url_for('module7.module7_home') }}">Module 7: Drug Delivery and Formulation</a>
-                           <ul class="dropdown-menu">
-                               <li><a href="#">Principles of Drug Delivery and Bioavailability</a></li>
-                               <li><a href="#">Nanocarriers and Targeted Drug Delivery Systems</a></li>
-                               <li><a href="#">Computational Methods for Drug Delivery Optimization</a></li>
-                               <li><a href="#">Formulation Strategies and Excipient Selection</a></li>
-                               <li><a href="#">Case Study: Designing Nanoparticles for Cancer Drug Delivery</a></li>
-                               <li><a href="#">Mini-Project: Optimizing Drug Formulation using Machine Learning</a></li>
-                           </ul>
-                       </li>
-                       <li class="dropdown-submenu">
-                           <a href="{{ url_for('module8.module8_home') }}">Module 8: Cheminformatics Tools and Techniques</a>
-                           <ul class="dropdown-menu">
-                               <li><a href="#">Molecular Descriptors and Fingerprints</a></li>
-                               <li><a href="#">Similarity Searching and Clustering Techniques</a></li>
-                               <li><a href="#">Managing and Querying Chemical Databases</a></li>
-                               <li><a href="#">Cheminformatics Workflows and Automation</a></li>
-                               <li><a href="#">Case Study: Integrating Cheminformatics in Drug Discovery Projects</a></li>
-                               <li><a href="#">Mini-Project: Building a Cheminformatics Pipeline for Virtual Screening</a></li>
-                           </ul>
-                       </li>
-                   </ul>
-               </li>
-               <li><a href="#">Resources</a></li>
-           </ul>
-       </nav>
-       <main>
-           {% block content %}{% endblock %}
-       </main>
-       <footer>
-           &copy; 2024 Computational Drug Discovery and Delivery: From Molecules to Medicines. All rights reserved.
-       </footer>
-   </body>
+    <header>
+        <h1>Computational Drug Discovery and Delivery: From Molecules to Medicines</h1>
+    </header>
+    {% include 'navigation.html' %}
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+    <footer>
+        &copy; 2024 Computational Drug Discovery and Delivery: From Molecules to Medicines. All rights reserved.
+    </footer>
+</body>
 </html>

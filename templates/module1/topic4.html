@@ -1,4 +1,3 @@
-
 {% extends 'base.html' %}
 {% block title %}Module 1: Topic 4 - Data Preprocessing and Visualization Techniques{% endblock %}
 {% block content %}
@@ -10,14 +9,16 @@
     <li>Discover visualization tools and techniques for analyzing chemical data</li>
 </ul>
 <p>In this topic, we will explore data preprocessing techniques and visualization tools commonly used in drug discovery. Data preprocessing is essential for ensuring the quality and reliability of chemical data, while visualization techniques help in understanding patterns, relationships, and trends within the data.</p>
-<h3>Data Preprocessing Techniques</h3>
+<h3>Data Preprocessing</h3>
+<p>Data preprocessing is a crucial step in preparing chemical data for analysis and modeling. It involves several techniques to clean, transform, and normalize the data:</p>
 <ul>
     <li>Data cleaning: Identifying and handling missing values, outliers, and inconsistencies in chemical datasets.</li>
     <li>Normalization: Scaling and transforming features to a common range or distribution.</li>
     <li>Feature selection: Identifying and selecting the most informative and relevant features for modeling.</li>
     <li>Data splitting: Dividing the dataset into training, validation, and test sets for model development and evaluation.</li>
 </ul>
-<h3>Data Visualization Techniques</h3>
+<h3>Data Visualization</h3>
+<p>Data visualization is a powerful tool for exploring and understanding chemical data. It allows researchers to identify patterns, relationships, and trends that may not be apparent from raw data. Some commonly used visualization techniques in drug discovery include:</p>
 <ul>
     <li>Scatter plots: Visualizing relationships between two variables, such as molecular properties or bioactivity.</li>
     <li>Heatmaps: Representing data as a color-coded matrix, useful for visualizing high-dimensional data.</li>
@@ -31,42 +32,49 @@
         <div id="chat-history-1"></div>
         <div id="input-box-1">
             <textarea name="initial_context_1" rows="6">A typical data preprocessing workflow for a chemical dataset in drug discovery involves several steps to ensure the quality and reliability of the data before further analysis or modeling. Here's a general outline of the workflow:
-
 Data Collection:
-- Gather chemical data from various sources, such as databases, literature, or experimental results.
-- Ensure that the data is in a structured format (e.g., CSV, SDF) and includes relevant information such as molecular structures, properties, and bioactivity data.
+
+Gather chemical data from various sources, such as databases, literature, or experimental results.
+Ensure that the data is in a structured format (e.g., CSV, SDF) and includes relevant information such as molecular structures, properties, and bioactivity data.
 
 Data Cleaning:
-- Handle missing values by either removing instances with missing data or imputing the missing values using appropriate techniques (e.g., mean imputation, median imputation).
-- Identify and remove outliers or erroneous data points that may have arisen due to experimental errors or data entry mistakes.
-- Check for inconsistencies in the data, such as duplicate entries or inconsistent units, and resolve them.
+
+Handle missing values by either removing instances with missing data or imputing the missing values using appropriate techniques (e.g., mean imputation, median imputation).
+Identify and remove outliers or erroneous data points that may have arisen due to experimental errors or data entry mistakes.
+Check for inconsistencies in the data, such as duplicate entries or inconsistent units, and resolve them.
 
 Standardization and Normalization:
-- Convert chemical structures to a standard representation (e.g., canonical SMILES) to ensure consistency.
-- Normalize numerical features (e.g., molecular weight, logP) to a common scale (e.g., 0 to 1) to avoid biases due to different ranges.
-- Apply appropriate transformations (e.g., log transformation) to features with skewed distributions.
+
+Convert chemical structures to a standard representation (e.g., canonical SMILES) to ensure consistency.
+Normalize numerical features (e.g., molecular weight, logP) to a common scale (e.g., 0 to 1) to avoid biases due to different ranges.
+Apply appropriate transformations (e.g., log transformation) to features with skewed distributions.
 
 Feature Selection and Engineering:
-- Remove irrelevant or redundant features that do not contribute to the target property or activity.
-- Select a subset of informative features using techniques such as correlation analysis, feature importance ranking, or domain knowledge.
-- Engineer new features based on existing ones or domain-specific knowledge to capture relevant information.
+
+Remove irrelevant or redundant features that do not contribute to the target property or activity.
+Select a subset of informative features using techniques such as correlation analysis, feature importance ranking, or domain knowledge.
+Engineer new features based on existing ones or domain-specific knowledge to capture relevant information.
 
 Data Integration and Merging:
-- Combine data from different sources or experiments to create a comprehensive dataset.
-- Ensure that the merged data is consistent and aligned properly.
+
+Combine data from different sources or experiments to create a comprehensive dataset.
+Ensure that the merged data is consistent and aligned properly.
 
 Data Splitting:
-- Split the preprocessed dataset into training, validation, and test sets.
-- Use stratified splitting to ensure that the distribution of the target variable is maintained across the splits.
+
+Split the preprocessed dataset into training, validation, and test sets.
+Use stratified splitting to ensure that the distribution of the target variable is maintained across the splits.
 
 Exploratory Data Analysis (EDA):
-- Perform statistical analysis and visualization of the preprocessed data.
-- Identify patterns, distributions, and relationships between variables.
-- Gain insights into the data and generate hypotheses for further investigation.
+
+Perform statistical analysis and visualization of the preprocessed data.
+Identify patterns, distributions, and relationships between variables.
+Gain insights into the data and generate hypotheses for further investigation.
 
 Data Transformation:
-- Apply appropriate transformations to the data based on the requirements of the downstream analysis or modeling tasks.
-- Common transformations include one-hot encoding for categorical variables, scaling, and dimensionality reduction techniques (e.g., PCA, t-SNE).
+
+Apply appropriate transformations to the data based on the requirements of the downstream analysis or modeling tasks.
+Common transformations include one-hot encoding for categorical variables, scaling, and dimensionality reduction techniques (e.g., PCA, t-SNE).
 
 By following this preprocessing workflow, the chemical dataset is cleaned, standardized, and transformed into a suitable format for subsequent analysis, modeling, and visualization tasks in drug discovery.
 </textarea>
@@ -88,5 +96,4 @@ By following this preprocessing workflow, the chemical dataset is cleaned, stand
     <a href="{{ url_for('module1.topic3') }}" class="previous-button">Previous Topic: Exploring Chemical Space and Compound Libraries</a>
     <a href="{{ url_for('module1.case_study') }}" class="next-button">Next: Case Study - Navigating the Chemical Universe for Hit Identification</a>
 </div>
-
 {% endblock %}

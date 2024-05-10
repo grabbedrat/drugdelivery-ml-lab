@@ -1,44 +1,75 @@
-
 {% extends 'base.html' %}
-{% block title %}Module 1: Topic 2 - Molecular Representation and Similarity Measures{% endblock %}
-{% block content %}
-<h2>Molecular Representation and Similarity Measures</h2>
-<h3>Learning Objectives</h3>
-<ul>
-    <li>Understand the concept of molecular representation and its importance</li>
-    <li>Learn about different molecular representation methods (e.g., SMILES, fingerprints)</li>
-    <li>Discover common similarity measures used in drug discovery (e.g., Tanimoto coefficient)</li>
-</ul>
-<p>In this topic, we will explore different ways to represent molecular structures and learn about various similarity measures used in drug discovery. Molecular representation is crucial for encoding the structure and properties of molecules in a format that can be processed by computers, while similarity measures allow us to quantify the resemblance between molecules.</p>
-<h3>Molecular Representation Methods</h3>
-<ul>
-    <li>SMILES (Simplified Molecular-Input Line-Entry System): A string notation for representing molecules based on their connectivity.</li>
-    <li>Molecular fingerprints: Binary vectors encoding the presence or absence of specific substructures or features in a molecule.</li>
-    <li>3D representations: Coordinate-based representations capturing the spatial arrangement of atoms in a molecule.</li>
-</ul>
-<h3>Similarity Measures</h3>
-<ul>
-    <li>Tanimoto coefficient: A commonly used similarity measure based on the overlap of molecular fingerprints.</li>
-    <li>Dice coefficient: Another fingerprint-based similarity measure similar to the Tanimoto coefficient.</li>
-    <li>Cosine similarity: Measures the cosine of the angle between two molecular fingerprint vectors.</li>
-    <li>Shape similarity: Quantifies the resemblance between the 3D shapes of molecules.</li>
-</ul>
-<h3>Exercise: Molecular Fingerprints</h3>
-<section>
-    <p>Explain the concept of molecular fingerprints and their applications in drug discovery.</p>
-    <div id="chat-container-1">
-        <div id="chat-history-1"></div>
-        <div id="input-box-1">
-            <textarea name="initial_context_1" rows="6">Molecular fingerprints are binary vectors that encode the presence or absence of specific substructures or features in a molecule. Each bit in the fingerprint corresponds to a particular structural pattern or property, and the entire fingerprint provides a compact representation of the molecule.
-The main applications of molecular fingerprints in drug discovery include:
+    {% block title %}Module 1: Topic 2 - Molecular Representation and Similarity Measures{% endblock %}
+    {% block content %}
+    <h2>Molecular Representation and Similarity Measures</h2>
+    <h3>Learning Objectives</h3>
+    <ul>
+        <li>Understand the concept of molecular representation and its importance in drug discovery</li>
+        <li>Learn about different molecular representation methods (e.g., SMILES, InChI, molecular graphs)</li>
+        <li>Discover common molecular descriptors and their applications</li>
+        <li>Explore molecular similarity measures and their role in identifying potential drug candidates</li>
+        <li>Understand the concept of scaffold hopping and its applications in drug discovery</li>
+    </ul>
+    <p>In this topic, we will dive deeper into molecular representation and similarity measures, building upon the foundations laid in the previous topic. We will learn about various methods for representing molecules, calculate molecular descriptors, and understand how similarity measures can aid in identifying promising drug candidates. We will also explore the concept of scaffold hopping and its applications in drug discovery.</p>
+    <h3>Molecular Representation Methods</h3>
+    <p>Molecular representation is crucial for encoding the structure and properties of molecules in a format that can be processed by computers. Some common molecular representation methods include:</p>
+    <ul>
+        <li>SMILES (Simplified Molecular-Input Line-Entry System): A string notation for representing molecules based on their connectivity.</li>
+        <li>InChI (International Chemical Identifier): A standardized, non-proprietary identifier for chemical substances.</li>
+        <li>Molecular graphs: A graph-based representation where atoms are nodes and bonds are edges.</li>
+    </ul>
+    <h3>Molecular Descriptors</h3>
+    <p>Molecular descriptors are numerical values that capture various aspects of a molecule's structure and properties. They serve as features for building machine learning models in drug discovery. Some common types of molecular descriptors include:</p>
+    <ul>
+        <li>2D descriptors: Derived from the molecular graph, such as molecular weight, number of atoms, and topological indices.</li>
+        <li>3D descriptors: Calculated from the 3D structure of the molecule, such as surface area, volume, and shape descriptors.</li>
+        <li>Physicochemical properties: Descriptors related to the physical and chemical properties of the molecule, such as solubility, lipophilicity, and hydrogen bond donors/acceptors.</li>
+        <li>Fingerprints and structural keys: Binary vectors that encode the presence or absence of specific substructures or functional groups in the molecule.</li>
+    </ul>
+    <h3>Molecular Similarity Measures</h3>
+    <p>Molecular similarity measures quantify the resemblance between molecules based on their structural or functional properties. They play a crucial role in identifying potential drug candidates by finding compounds similar to known active molecules. Some commonly used similarity measures include:</p>
+    <ul>
+        <li>Tanimoto coefficient: A widely used similarity measure based on the overlap of molecular fingerprints.</li>
+        <li>Dice coefficient: Another fingerprint-based similarity measure similar to the Tanimoto coefficient.</li>
+        <li>Cosine similarity: Measures the cosine of the angle between two molecular fingerprint vectors.</li>
+        <li>Shape similarity: Quantifies the resemblance between the 3D shapes of molecules.</li>
+    </ul>
+    <h3>Scaffold Hopping and Advanced Similarity Measures</h3>
+    <p>Scaffold hopping is a drug discovery strategy that involves identifying novel chemical scaffolds that have similar biological activity to a known active compound but with different structural features. It allows researchers to explore new regions of chemical space and discover compounds with improved properties. Advanced similarity measures, such as pharmacophore-based similarity and shape-based similarity, can be used to facilitate scaffold hopping and identify compounds with similar biological activity but different scaffolds.</p>
+    <a href="https://example.com/module1_lesson2.ipynb" download class="download-button">
+      <i class="fas fa-download"></i> Download Jupyter Notebook
+    </a>
+    <button id="toggle-gist" class="toggle-button">View/Hide Jupyter Notebook</button>
+    <div id="gist-container" style="display: none;">
+      <script src="https://gist.github.com/username/gist_id.js"></script>
+    </div>
+    <p>The accompanying Jupyter notebook for this topic provides hands-on examples of working with molecular representations, calculating molecular descriptors, computing similarity measures, and applying scaffold hopping techniques using Python and the RDKit library. It covers:</p>
+    <ul>
+      <li>Converting molecules between different representations (e.g., SMILES, InChI, molecular graphs)</li>
+      <li>Calculating 2D, 3D, and physicochemical descriptors for molecules</li>
+      <li>Generating molecular fingerprints and structural keys</li>
+      <li>Computing similarity measures between molecules using different methods</li>
+      <li>Applying advanced similarity measures for scaffold hopping and identifying novel drug candidates</li>
+    </ul>
+    <p>By working through the notebook, you'll gain practical experience in handling molecular data, extracting meaningful features, leveraging molecular similarity for drug discovery tasks, and exploring scaffold hopping techniques.</p>
+    <h3>Exercise: Scaffold Hopping</h3>
+    <section>
+        <p>Explain the concept of scaffold hopping and discuss its importance in drug discovery. Provide an example of how advanced similarity measures can be used for scaffold hopping.</p>
+        <div id="chat-container-1">
+            <div id="chat-history-1"></div>
+            <div id="input-box-1">
+                <textarea name="initial_context_1" rows="6">Scaffold hopping is a drug discovery strategy that involves identifying novel chemical scaffolds that have similar biological activity to a known active compound but with different structural features. The goal of scaffold hopping is to explore new regions of chemical space and discover compounds with improved properties, such as better potency, selectivity, or pharmacokinetic profiles.
+The importance of scaffold hopping in drug discovery lies in its ability to:
 
-Similarity searching: Fingerprints enable rapid similarity comparisons between molecules. By calculating similarity coefficients (e.g., Tanimoto coefficient) between fingerprints, researchers can identify molecules with similar structures, which often exhibit similar biological activities.
-Clustering and diversity analysis: Fingerprints facilitate the grouping of molecules based on their structural similarity. This is useful for creating diverse libraries, identifying representative compounds, and understanding structure-activity relationships within a dataset.
-Virtual screening: Fingerprints accelerate the virtual screening of large chemical libraries by enabling rapid similarity searches and filtering of compounds based on specific structural criteria.
-Machine learning: Fingerprints serve as feature vectors for building machine learning models in drug discovery. They capture relevant structural information and can be used for tasks such as activity prediction, target identification, and ADME/Tox modeling.
+Overcome limitations of existing scaffolds: Known active compounds may have certain limitations, such as poor solubility, toxicity, or intellectual property issues. Scaffold hopping allows researchers to identify alternative scaffolds that retain the desired biological activity while addressing these limitations.
+Expand chemical diversity: By exploring different scaffolds, scaffold hopping helps to increase the chemical diversity of a drug discovery project. This diversity can lead to the identification of novel compounds with improved properties and the potential to address different target binding modes.
+Circumvent patent restrictions: Scaffold hopping can be used to identify novel compounds that are structurally distinct from existing patented compounds. This can help in developing new drugs that are not subject to patent restrictions.
 
-Different types of fingerprints, such as hashed fingerprints (e.g., Morgan fingerprints) and substructure fingerprints (e.g., MACCS keys), capture different aspects of molecular structure and have their own strengths and limitations. The choice of fingerprint depends on the specific application and the desired balance between computational efficiency and information content.
-Molecular fingerprints are a powerful tool in drug discovery, providing a concise and computationally efficient representation of molecules for various tasks. They enable researchers to navigate the chemical space, identify promising compounds, and make informed decisions in the drug discovery process.
+Advanced similarity measures play a crucial role in scaffold hopping by enabling the identification of compounds with similar biological activity but different scaffolds. Here's an example:
+Let's say we have a known active compound (Compound A) that binds to a specific therapeutic target. However, Compound A has poor oral bioavailability. We want to find alternative scaffolds that retain the biological activity but improve the bioavailability.
+By using advanced similarity measures, such as pharmacophore-based similarity or shape-based similarity, we can search a large compound library for molecules that share similar 3D structural features or pharmacophoric patterns with Compound A. These measures go beyond simple 2D structural similarity and consider the 3D arrangement of key functional groups or the overall shape of the molecule.
+Through this search, we may identify Compound B, which has a different scaffold compared to Compound A but shares similar pharmacophoric features. Compound B may have improved oral bioavailability while retaining the desired biological activity.
+By applying advanced similarity measures and scaffold hopping techniques, researchers can explore a wider chemical space, identify novel scaffolds, and potentially discover compounds with improved properties. This approach enhances the chances of finding successful drug candidates and overcoming the limitations of existing compounds.
 </textarea>
 <form id="chat-form-1" class="chat-form">
 <input type="hidden" name="context_1" value="">
@@ -46,13 +77,15 @@ Molecular fingerprints are a powerful tool in drug discovery, providing a concis
 <button type="submit">Submit</button>
 </form>
 </div>
-</div>
+</div>  
 </section>
+<p>By understanding molecular representation, descriptors, similarity measures, and scaffold hopping techniques, we can effectively explore the chemical space and identify promising drug candidates. In the next topic, we will delve into chemical space and compound libraries, further expanding our knowledge of drug discovery.</p>
 <h3>Additional Resources</h3>
 <ul>
     <li><a href="https://jcheminf.biomedcentral.com/articles/10.1186/s13321-015-0069-3" target="_blank">Molecular representations in AI-driven drug discovery: A review and practical guide</a></li>
     <li><a href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6279837/" target="_blank">Molecular similarity measures</a></li>
     <li><a href="https://www.rdkit.org/docs/GettingStartedInPython.html#fingerprinting-and-molecular-similarity" target="_blank">RDKit: Fingerprinting and molecular similarity</a></li>
+    <li><a href="https://pubs.acs.org/doi/10.1021/acs.jmedchem.9b00349" target="_blank">Scaffold hopping: Challenges and opportunities in drug discovery</a></li>
 </ul>
 <div class="navigation">
     <a href="{{ url_for('module1.topic1') }}" class="previous-button">Previous Topic: Introduction to the Drug Discovery Pipeline</a>

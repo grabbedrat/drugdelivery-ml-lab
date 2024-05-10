@@ -18,6 +18,18 @@ def topic3():
 def topic4():
     return render_template('module5/topic4.html')
 
+@module5.route('/topic5')
+def topic5():
+    return render_template('module5/topic5.html')
+
+@module5.route('/topic6')
+def topic6():
+    return render_template('module5/topic6.html')
+
+@module5.route('/topic7')
+def topic7():
+    return render_template('module5/topic7.html')
+
 @module5.route('/case_study')
 def case_study():
     return render_template('module5/case_study.html')

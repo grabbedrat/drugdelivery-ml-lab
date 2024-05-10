@@ -7,6 +7,7 @@ from modules.module4.routes import module4
 from modules.module5.routes import module5
 from modules.module6.routes import module6
 from modules.module7.routes import module7
+from modules.module8.routes import module8
 from modules.chatbot import chatbot_bp
 
 from navutils import register_context_processors
@@ -21,6 +22,7 @@ app.register_blueprint(module4)
 app.register_blueprint(module5)
 app.register_blueprint(module6)
 app.register_blueprint(module7)
+app.register_blueprint(module8)
 
 app.register_blueprint(chatbot_bp)
 

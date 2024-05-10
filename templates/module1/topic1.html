@@ -1,52 +1,66 @@
     {% extends 'base.html' %}
     {% block title %}Module 1: Topic 1 - Introduction to the Drug Discovery Pipeline{% endblock %}
     {% block content %}
-    <h2>Introduction to the Drug Discovery Pipeline</h2>
-    <h3>Learning Objectives</h3>
-    <ul>
-        <li>Understand the key stages of the drug discovery pipeline</li>
-        <li>Recognize the role of computational methods in modern drug discovery</li>
-        <li>Identify the main challenges and bottlenecks in the drug discovery process</li>
-    </ul>
-    <p>In this topic, we will explore the drug discovery pipeline and the various stages involved in identifying and developing new drugs. We will also discuss the role of computational methods in modern drug discovery and the main challenges and bottlenecks in the process.</p>
-    <h3>The Drug Discovery Pipeline</h3>
-    <p>The drug discovery pipeline is a complex and multidisciplinary process that involves several key stages:</p>
-    <ol>
-        <li>Target identification and validation</li>
-        <li>Hit identification and lead generation</li>
-        <li>Lead optimization</li>
-        <li>Preclinical studies</li>
-        <li>Clinical trials</li>
-        <li>Regulatory approval</li>
-    </ol>
-    <p>Each stage presents unique challenges and requires collaboration among experts from various fields, including biology, chemistry, pharmacology, and computational sciences.</p>
-    <h3>Role of Computational Methods in Drug Discovery</h3>
-    <p>Computational methods have become increasingly important in modern drug discovery, enabling researchers to navigate the vast chemical space more efficiently and make data-driven decisions. Some key applications of computational methods include:</p>
-    <ul>
-        <li>Virtual screening and de novo drug design</li>
-        <li>Quantitative structure-activity relationship (QSAR) modeling</li>
-        <li>Molecular docking and structure-based drug design</li>
-        <li>ADME/Tox prediction and optimization</li>
-        <li>Data integration and analysis</li>
-    </ul>
-    <p>By leveraging computational tools and techniques, researchers can accelerate the drug discovery process, reduce costs, and increase the likelihood of success.</p>
-    <h3>Challenges and Bottlenecks in Drug Discovery</h3>
-    <p>Despite advancements in technology and computational methods, the drug discovery process still faces several challenges and bottlenecks:</p>
-    <ul>
-        <li>High attrition rates and low success rates</li>
-        <li>Long timelines and high costs</li>
-        <li>Complexity of biological systems and disease mechanisms</li>
-        <li>Lack of predictive models and translational tools</li>
-        <li>Regulatory hurdles and changing market dynamics</li>
-    </ul>
-    <p>Addressing these challenges requires a multidisciplinary approach, collaboration among stakeholders, and continuous innovation in both experimental and computational methods.</p>
-    <h3>Additional Resources</h3>
-    <ul>
-        <li><a href="https://www.nature.com/articles/nrd3078" target="_blank">The drug discovery process: An overview</a></li>
-        <li><a href="https://pubs.acs.org/doi/10.1021/acs.jmedchem.9b01265" target="_blank">The role of computational methods in drug discovery</a></li>
-        <li><a href="https://www.nature.com/articles/s41573-021-00198-1" target="_blank">Challenges and opportunities in drug discovery</a></li>
-    </ul>
-    <div class="navigation">
-        <a href="{{ url_for('module1.topic2') }}" class="next-button">Next Topic: Molecular Representation and Similarity Measures</a>
-    </div>
+    <body>
+        <section>
+            <h2>Learning Objectives</h2>
+            <ul>
+                <li>Understand the key stages of the drug discovery pipeline.</li>
+                <li>Recognize the role of computational methods in modern drug discovery.</li>
+                <li>Identify the main challenges and bottlenecks in the drug discovery process.</li>
+            </ul>
+        </section>
+        <section>
+            <h2>The Drug Discovery Pipeline</h2>
+            <p>The drug discovery pipeline is a complex and multidisciplinary process that involves several key stages:</p>
+            <ol>
+                <li>Target identification and validation.</li>
+                <li>Hit identification and lead generation.</li>
+                <li>Lead optimization.</li>
+                <li>Preclinical studies.</li>
+                <li>Clinical trials.</li>
+                <li>Regulatory approval.</li>
+            </ol>
+            <p>Each stage presents unique challenges and requires collaboration among experts from various fields, including biology, chemistry, pharmacology, and computational sciences.</p>
+        </section>
+        <section>
+            <h2>Role of Computational Methods in Drug Discovery</h2>
+            <p>Computational methods have become increasingly important in modern drug discovery, enabling researchers to navigate the vast chemical space more efficiently and make data-driven decisions. Some key applications of computational methods include:</p>
+            <ul>
+                <li>Virtual screening and de novo drug design.</li>
+                <li>Quantitative structure-activity relationship (QSAR) modeling.</li>
+                <li>Molecular docking and structure-based drug design.</li>
+                <li>ADME/Tox prediction and optimization.</li>
+                <li>Data integration and analysis.</li>
+            </ul>
+            <p>By leveraging computational tools and techniques, researchers can accelerate the drug discovery process, reduce costs, and increase the likelihood of success.</p>
+        </section>
+        <section>
+            <h2>Challenges and Bottlenecks in Drug Discovery</h2>
+            <p>Despite advancements in technology and computational methods, the drug discovery process still faces several challenges and bottlenecks:</p>
+            <ul>
+                <li>High attrition rates and low success rates.</li>
+                <li>Long timelines and high costs.</li>
+                <li>Complexity of biological systems and disease mechanisms.</li>
+                <li>Lack of predictive models and translational tools.</li>
+                <li>Regulatory hurdles and changing market dynamics.</li>
+            </ul>
+            <p>Addressing these challenges requires a multidisciplinary approach, collaboration among stakeholders, and continuous innovation in both experimental and computational methods.</p>
+        </section>
+        <section>
+            <h2>Additional Resources</h2>
+            <ul>
+                <li><a href="https://www.nature.com/articles/nrd3078" target="_blank">The drug discovery process: An overview</a></li>
+                <li><a href="https://pubs.acs.org/doi/10.1021/acs.jmedchem.9b01265" target="_blank">The role of computational methods in drug discovery</a></li>
+                <li><a href="https://www.nature.com/articles/s41573-021-00198-1" target="_blank">Challenges and opportunities in drug discovery</a></li>
+            </ul>
+        </section>
+        <footer>
+            <div class="navigation">
+                <a href="{{ url_for('module1.topic2') }}" class="next-button">Next Topic: Molecular Representation and Similarity Measures</a>
+            </div>
+        </footer>
+    </body>
+    </html>
+    
     {% endblock %}

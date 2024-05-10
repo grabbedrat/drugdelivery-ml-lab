@@ -1,85 +1,80 @@
 {% extends 'base.html' %}
-    {% block title %}Module 1: Topic 2 - Molecular Representation and Similarity Measures{% endblock %}
-    {% block content %}
-    <h2>Molecular Representation and Similarity Measures</h2>
-    <h3>Learning Objectives</h3>
-    <ul>
-        <li>Understand the concept of molecular representation and its importance in drug discovery</li>
-        <li>Learn about different molecular representation methods (e.g., SMILES, InChI, molecular graphs)</li>
-        <li>Discover common molecular descriptors and their applications</li>
-        <li>Explore molecular similarity measures and their role in identifying potential drug candidates</li>
-        <li>Understand the concept of scaffold hopping and its applications in drug discovery</li>
-    </ul>
-    <p>In this topic, we will dive deeper into molecular representation and similarity measures, building upon the foundations laid in the previous topic. We will learn about various methods for representing molecules, calculate molecular descriptors, and understand how similarity measures can aid in identifying promising drug candidates. We will also explore the concept of scaffold hopping and its applications in drug discovery.</p>
-    <h3>Molecular Representation Methods</h3>
-    <p>Molecular representation is crucial for encoding the structure and properties of molecules in a format that can be processed by computers. Some common molecular representation methods include:</p>
-    <ul>
-        <li>SMILES (Simplified Molecular-Input Line-Entry System): A string notation for representing molecules based on their connectivity.</li>
-        <li>InChI (International Chemical Identifier): A standardized, non-proprietary identifier for chemical substances.</li>
-        <li>Molecular graphs: A graph-based representation where atoms are nodes and bonds are edges.</li>
-    </ul>
-    <h3>Molecular Descriptors</h3>
-    <p>Molecular descriptors are numerical values that capture various aspects of a molecule's structure and properties. They serve as features for building machine learning models in drug discovery. Some common types of molecular descriptors include:</p>
-    <ul>
-        <li>2D descriptors: Derived from the molecular graph, such as molecular weight, number of atoms, and topological indices.</li>
-        <li>3D descriptors: Calculated from the 3D structure of the molecule, such as surface area, volume, and shape descriptors.</li>
-        <li>Physicochemical properties: Descriptors related to the physical and chemical properties of the molecule, such as solubility, lipophilicity, and hydrogen bond donors/acceptors.</li>
-        <li>Fingerprints and structural keys: Binary vectors that encode the presence or absence of specific substructures or functional groups in the molecule.</li>
-    </ul>
-    <h3>Molecular Similarity Measures</h3>
-    <p>Molecular similarity measures quantify the resemblance between molecules based on their structural or functional properties. They play a crucial role in identifying potential drug candidates by finding compounds similar to known active molecules. Some commonly used similarity measures include:</p>
-    <ul>
-        <li>Tanimoto coefficient: A widely used similarity measure based on the overlap of molecular fingerprints.</li>
-        <li>Dice coefficient: Another fingerprint-based similarity measure similar to the Tanimoto coefficient.</li>
-        <li>Cosine similarity: Measures the cosine of the angle between two molecular fingerprint vectors.</li>
-        <li>Shape similarity: Quantifies the resemblance between the 3D shapes of molecules.</li>
-    </ul>
-    <h3>Scaffold Hopping and Advanced Similarity Measures</h3>
-    <p>Scaffold hopping is a drug discovery strategy that involves identifying novel chemical scaffolds that have similar biological activity to a known active compound but with different structural features. It allows researchers to explore new regions of chemical space and discover compounds with improved properties. Advanced similarity measures, such as pharmacophore-based similarity and shape-based similarity, can be used to facilitate scaffold hopping and identify compounds with similar biological activity but different scaffolds.</p>
-    <a href="https://example.com/module1_lesson2.ipynb" download class="download-button">
-      <i class="fas fa-download"></i> Download Jupyter Notebook
-    </a>
-    <button id="toggle-gist" class="toggle-button">View/Hide Jupyter Notebook</button>
-    <div id="gist-container" style="display: none;">
-      <script src="https://gist.github.com/username/gist_id.js"></script>
-    </div>
-    <p>The accompanying Jupyter notebook for this topic provides hands-on examples of working with molecular representations, calculating molecular descriptors, computing similarity measures, and applying scaffold hopping techniques using Python and the RDKit library. It covers:</p>
-    <ul>
-      <li>Converting molecules between different representations (e.g., SMILES, InChI, molecular graphs)</li>
-      <li>Calculating 2D, 3D, and physicochemical descriptors for molecules</li>
-      <li>Generating molecular fingerprints and structural keys</li>
-      <li>Computing similarity measures between molecules using different methods</li>
-      <li>Applying advanced similarity measures for scaffold hopping and identifying novel drug candidates</li>
-    </ul>
-    <p>By working through the notebook, you'll gain practical experience in handling molecular data, extracting meaningful features, leveraging molecular similarity for drug discovery tasks, and exploring scaffold hopping techniques.</p>
-    <h3>Exercise: Scaffold Hopping</h3>
-    <section>
-        <p>Explain the concept of scaffold hopping and discuss its importance in drug discovery. Provide an example of how advanced similarity measures can be used for scaffold hopping.</p>
-        <div id="chat-container-1">
-            <div id="chat-history-1"></div>
-            <div id="input-box-1">
-                <textarea name="initial_context_1" rows="6">Scaffold hopping is a drug discovery strategy that involves identifying novel chemical scaffolds that have similar biological activity to a known active compound but with different structural features. The goal of scaffold hopping is to explore new regions of chemical space and discover compounds with improved properties, such as better potency, selectivity, or pharmacokinetic profiles.
-The importance of scaffold hopping in drug discovery lies in its ability to:
-
-Overcome limitations of existing scaffolds: Known active compounds may have certain limitations, such as poor solubility, toxicity, or intellectual property issues. Scaffold hopping allows researchers to identify alternative scaffolds that retain the desired biological activity while addressing these limitations.
-Expand chemical diversity: By exploring different scaffolds, scaffold hopping helps to increase the chemical diversity of a drug discovery project. This diversity can lead to the identification of novel compounds with improved properties and the potential to address different target binding modes.
-Circumvent patent restrictions: Scaffold hopping can be used to identify novel compounds that are structurally distinct from existing patented compounds. This can help in developing new drugs that are not subject to patent restrictions.
-
-Advanced similarity measures play a crucial role in scaffold hopping by enabling the identification of compounds with similar biological activity but different scaffolds. Here's an example:
-Let's say we have a known active compound (Compound A) that binds to a specific therapeutic target. However, Compound A has poor oral bioavailability. We want to find alternative scaffolds that retain the biological activity but improve the bioavailability.
-By using advanced similarity measures, such as pharmacophore-based similarity or shape-based similarity, we can search a large compound library for molecules that share similar 3D structural features or pharmacophoric patterns with Compound A. These measures go beyond simple 2D structural similarity and consider the 3D arrangement of key functional groups or the overall shape of the molecule.
-Through this search, we may identify Compound B, which has a different scaffold compared to Compound A but shares similar pharmacophoric features. Compound B may have improved oral bioavailability while retaining the desired biological activity.
-By applying advanced similarity measures and scaffold hopping techniques, researchers can explore a wider chemical space, identify novel scaffolds, and potentially discover compounds with improved properties. This approach enhances the chances of finding successful drug candidates and overcoming the limitations of existing compounds.
-</textarea>
-<form id="chat-form-1" class="chat-form">
-<input type="hidden" name="context_1" value="">
-<textarea name="prompt_1" placeholder="Enter your answer here"></textarea>
-<button type="submit">Submit</button>
-</form>
+{% block title %}Module 1: Topic 2 - Molecular Representation and Similarity Measures{% endblock %}
+{% block content %}
+<h2>Molecular Representation and Similarity Measures</h2>
+<h3>Learning Objectives</h3>
+<ul>
+    <li>Understand the concept of molecular representation and its importance in drug discovery</li>
+    <li>Learn about different molecular representation methods (e.g., SMILES, InChI, molecular graphs)</li>  
+    <li>Discover common molecular descriptors and their applications</li>
+    <li>Explore molecular similarity measures and their role in identifying potential drug candidates</li>
+    <li>Understand the concept of scaffold hopping and its applications in drug discovery</li>
+</ul>
+<p>In this topic, we will dive deeper into molecular representation and similarity measures, building upon the foundations laid in the previous topic. We will learn about various methods for representing molecules, calculate molecular descriptors, and understand how similarity measures can aid in identifying promising drug candidates. We will also explore the concept of scaffold hopping and its applications in drug discovery.</p>
+<h3>Molecular Representation Methods</h3>
+<p>Molecular representation is crucial for encoding the structure and properties of molecules in a format that can be processed by computers. It allows researchers to store, search, and analyze molecular data effectively. Some common molecular representation methods include:</p>
+<ul>
+    <li><strong>SMILES (Simplified Molecular-Input Line-Entry System):</strong> A widely used string notation for representing molecules based on their connectivity. SMILES strings encode the atomic elements, bonds, branching, and stereochemistry of a molecule in a compact and human-readable format. They are easy to store, search, and manipulate programmatically. SMILES representation follows a set of rules and conventions to ensure unique and unambiguous encoding of molecules.</li>
+    <li><strong>InChI (International Chemical Identifier):</strong> A standardized, non-proprietary identifier for chemical substances. InChI strings provide a unique and unambiguous representation of molecules, including layers of information such as connectivity, tautomeric form, isotope composition, and stereochemistry. They are useful for ensuring consistency and interoperability across different databases and software tools. InChI strings are generated using a well-defined algorithm and are machine-readable.</li>
+    <li><strong>Molecular graphs:</strong> A graph-based representation where atoms are represented as nodes and bonds as edges. Molecular graphs capture the topological structure of molecules and can be used for various computations, such as substructure searching, similarity calculations, and structure generation. They form the basis for many cheminformatics algorithms and machine learning approaches. Molecular graphs can be represented using adjacency matrices or connectivity tables.</li>
+</ul>
+<p>Understanding and utilizing these molecular representation methods is essential for effectively storing, retrieving, and analyzing molecular data in drug discovery workflows. Each representation method has its strengths and limitations, and the choice of representation depends on the specific application and computational requirements.</p>
+<p>It's worth noting that there are also other molecular representation methods, such as semantic representations and reduced graphs. Semantic representations, like DeepSMILES and SELFIES, aim to address some of the limitations of SMILES by incorporating more structural and semantic information. Reduced graphs, on the other hand, simplify the molecular graph by collapsing certain substructures into single nodes, reducing the complexity of the representation while retaining essential structural features.</p>
+<h3>Molecular Descriptors</h3>
+<p>Molecular descriptors are numerical values that capture various aspects of a molecule's structure and properties. They serve as features for building machine learning models and quantitative structure-activity relationship (QSAR) models in drug discovery. Molecular descriptors enable researchers to quantitatively characterize molecules and establish relationships between their structural features and biological activities. Some common types of molecular descriptors include:</p>
+<ul>
+    <li><strong>2D descriptors:</strong> Derived from the molecular graph, such as molecular weight, number of atoms, number of rings, and topological indices. These descriptors capture the connectivity and structural features of a molecule without considering its 3D conformation. Examples include the Wiener index, Balaban index, and Kier-Hall descriptors. 2D descriptors are computationally inexpensive and can provide useful information for structure-activity relationship analysis and virtual screening.</li> 
+    <li><strong>3D descriptors:</strong> Calculated from the 3D structure of the molecule, such as surface area, volume, and shape descriptors. These descriptors take into account the spatial arrangement of atoms and provide information about the molecular shape and size. Examples include the radius of gyration, solvent-accessible surface area, and principal moments of inertia. 3D descriptors are more computationally demanding but can capture important structural features related to molecular recognition and binding.</li>
+    <li><strong>Physicochemical properties:</strong> Descriptors related to the physical and chemical properties of the molecule, such as solubility, lipophilicity (LogP), and hydrogen bond donors/acceptors. These descriptors capture the pharmacokinetic and drug-like properties of molecules and are important for assessing their suitability as drug candidates. Other examples include polar surface area, molar refractivity, and rotatable bond count. Physicochemical properties are often used in drug-likeness filters and ADME prediction models.</li>
+    <li><strong>Fingerprints and structural keys:</strong> Binary vectors that encode the presence or absence of specific substructures or functional groups in the molecule. Fingerprints provide a compact representation of molecular structure and are widely used for similarity searching and clustering. Examples include Morgan/circular fingerprints, MACCS keys, and pharmacophore fingerprints. Fingerprints enable rapid comparison of molecular structures and are useful for virtual screening and diversity analysis.</li>
+</ul>  
+<p>Molecular descriptors are calculated using various software tools and libraries, such as RDKit, MOE, and Dragon. They serve as input features for machine learning models, enabling the prediction of properties like bioactivity, toxicity, and ADME (absorption, distribution, metabolism, and excretion) profiles. By leveraging molecular descriptors, researchers can identify important structural features, establish structure-activity relationships, and guide the design and optimization of drug candidates. The selection of relevant descriptors depends on the specific biological activity or property being modeled and often involves feature selection techniques to identify the most informative descriptors.</p>
+<p>In addition to the mentioned descriptor types, there are also more advanced and specialized descriptors, such as quantum-chemical descriptors and topological pharmacophore descriptors. Quantum-chemical descriptors, derived from quantum-mechanical calculations, provide information about the electronic properties and reactivity of molecules. Topological pharmacophore descriptors encode the presence and spatial arrangement of pharmacophoric features, such as hydrogen bond donors, acceptors, and hydrophobic regions, which are crucial for drug-target interactions.</p>
+<h3>Molecular Similarity Measures</h3>
+<p>Molecular similarity measures quantify the resemblance between molecules based on their structural or functional properties. They play a crucial role in identifying potential drug candidates by finding compounds similar to known active molecules. Similarity-based approaches rely on the assumption that structurally similar molecules are likely to have similar biological activities. Some commonly used similarity measures include:</p>
+<ul>
+    <li><strong>Tanimoto coefficient:</strong> Also known as the Jaccard index, it is a widely used similarity measure based on the overlap of molecular fingerprints. The Tanimoto coefficient ranges from 0 to 1, with higher values indicating greater similarity. It is calculated as the ratio of the number of common features (bits) between two fingerprints to the total number of features present in either fingerprint. The Tanimoto coefficient is easy to compute and has been shown to perform well in various drug discovery applications.</li>
+    <li><strong>Dice coefficient:</strong> Another fingerprint-based similarity measure similar to the Tanimoto coefficient. It is calculated as twice the number of common features divided by the sum of the number of features in each fingerprint. The Dice coefficient also ranges from 0 to 1, with higher values indicating greater similarity. It gives more weight to the common features compared to the Tanimoto coefficient.</li>
+    <li><strong>Cosine similarity:</strong> Measures the cosine of the angle between two molecular fingerprint vectors. It treats the fingerprints as vectors in a high-dimensional space and calculates their cosine similarity. Cosine similarity ranges from -1 to 1, with higher positive values indicating greater similarity. It is useful when the magnitude of the fingerprint vectors is less important than their orientation.</li>
+    <li><strong>Shape similarity:</strong> Quantifies the resemblance between the 3D shapes of molecules. Shape similarity measures, such as the Tversky index and the Gaussian shape overlay, compare the spatial overlap and complementarity of molecular shapes. They are particularly useful for identifying molecules with similar binding modes or for scaffold hopping. Shape similarity can be combined with pharmacophore matching to enhance the identification of biologically relevant compounds.</li>
+</ul>
+<p>Molecular similarity measures are used in various drug discovery tasks, such as virtual screening, lead optimization, and structure-activity relationship (SAR) analysis. By identifying compounds similar to known active molecules, researchers can prioritize compounds for experimental testing, explore structure-activity relationships, and generate new ideas for compound design. Similarity measures can also be used for clustering compounds, identifying diverse subsets, and navigating chemical space. The choice of similarity measure depends on the specific application and the type of molecular representation used.</p>  
+<p>Molecular similarity measures can also be combined with machine learning techniques to enhance their predictive power. For example, similarity-weighted activity prediction methods, such as k-nearest neighbors (k-NN) and support vector machines (SVM), leverage the similarity between molecules to predict the activity of new compounds. These methods assign higher weights to more similar compounds when making predictions, improving the accuracy and reliability of the results.</p>
+<h3>Scaffold Hopping and Advanced Similarity Measures</h3>
+<p>Scaffold hopping is a drug discovery strategy that involves identifying novel chemical scaffolds that have similar biological activity to a known active compound but with different structural features. The goal of scaffold hopping is to explore new regions of chemical space and discover compounds with improved properties, such as better potency, selectivity, or pharmacokinetic profiles. Scaffold hopping allows researchers to move beyond the limitations of existing chemical series and identify new lead compounds with diverse chemical structures.</p>
+<p>The importance of scaffold hopping in drug discovery lies in its ability to:</p>
+<ul>
+<li><strong>Overcome limitations of existing scaffolds:</strong> Known active compounds may have certain limitations, such as poor solubility, toxicity, or intellectual property issues. Scaffold hopping allows researchers to identify alternative scaffolds that retain the desired biological activity while addressing these limitations. By exploring different chemical scaffolds, researchers can optimize the properties of lead compounds and overcome the challenges associated with the original scaffold.</li>
+<li><strong>Expand chemical diversity:</strong> By exploring different scaffolds, scaffold hopping helps to increase the chemical diversity of a drug discovery project. This diversity can lead to the identification of novel compounds with improved properties and the potential to address different target binding modes. Expanding chemical diversity is important for finding new and innovative solutions to therapeutic challenges and avoiding the limitations of narrow chemical space.</li>
+<li><strong>Circumvent patent restrictions:</strong> Scaffold hopping can be used to identify novel compounds that are structurally distinct from existing patented compounds. This can help in developing new drugs that are not subject to patent restrictions. By finding alternative scaffolds that are not covered by existing patents, researchers can open up new opportunities for drug development and commercialization.</li>
+</ul>
+<p>Advanced similarity measures play a crucial role in scaffold hopping by enabling the identification of compounds with similar biological activity but different scaffolds. These measures go beyond simple 2D structural similarity and consider the 3D arrangement of key functional groups or the overall shape of the molecule. Examples of advanced similarity measures include pharmacophore-based similarity, shape-based similarity, and electrostatic similarity.</p>
+<p>Here's an example to illustrate the application of advanced similarity measures in scaffold hopping:</p>
+<p>Let's say we have a known active compound (Compound A) that binds to a specific therapeutic target. However, Compound A has poor oral bioavailability, limiting its potential as a drug candidate. We want to find alternative scaffolds that retain the biological activity but improve the bioavailability.</p>
+<p>By using pharmacophore-based similarity, we can define the essential pharmacophoric features of Compound A, such as hydrogen bond donors, hydrogen bond acceptors, and hydrophobic regions. We can then search a large compound library for molecules that share similar pharmacophoric patterns with Compound A. This search will identify compounds with different scaffolds but similar 3D arrangement of key functional groups.</p>
+<p>Additionally, we can employ shape-based similarity measures to find compounds with similar 3D shape and volume to Compound A. Shape similarity can capture the overall molecular shape and help identify compounds that may fit into the same binding pocket as Compound A.</p>
+<p>Through this multi-faceted approach using advanced similarity measures, we may identify Compound B, which has a different scaffold compared to Compound A but shares similar pharmacophoric features and shape complementarity. Compound B may have improved oral bioavailability while retaining the desired biological activity.</p>
+<p>By applying advanced similarity measures and scaffold hopping techniques, researchers can explore a wider chemical space, identify novel scaffolds, and potentially discover compounds with improved properties. This approach enhances the chances of finding successful drug candidates and overcoming the limitations of existing compounds.</p>
+<p>Scaffold hopping can also be approached using generative models, such as variational autoencoders (VAEs) and generative adversarial networks (GANs). These models learn the underlying patterns and distributions of molecular structures from a training set and can generate novel compounds with desired properties. By encoding the structural and pharmacophoric features of known active compounds, generative models can propose new scaffolds that retain the desired biological activity while exploring different regions of chemical space.</p>
+<a href="https://example.com/module1_lesson2.ipynb" download class="download-button">
+    <i class="fas fa-download"></i> Download Jupyter Notebook
+</a>
+<button id="toggle-gist" class="toggle-button">View/Hide Jupyter Notebook</button>
+<div id="gist-container" style="display: none;">
+    <script src="https://gist.github.com/username/gist_id.js"></script>
 </div>
-</div>  
-</section>
-<p>By understanding molecular representation, descriptors, similarity measures, and scaffold hopping techniques, we can effectively explore the chemical space and identify promising drug candidates. In the next topic, we will delve into chemical space and compound libraries, further expanding our knowledge of drug discovery.</p>
+<p>The accompanying Jupyter notebook for this topic provides hands-on examples of working with molecular representations, calculating molecular descriptors, computing similarity measures, and applying scaffold hopping techniques using Python and the RDKit library. It covers:</p>
+<ul>
+    <li>Converting molecules between different representations (e.g., SMILES, InChI, molecular graphs)</li>
+    <li>Calculating 2D, 3D, and physicochemical descriptors for molecules</li>
+    <li>Generating molecular fingerprints and structural keys</li>
+    <li>Computing similarity measures between molecules using different methods</li>  
+    <li>Applying advanced similarity measures for scaffold hopping and identifying novel drug candidates</li>
+</ul>
+<p>By working through the notebook, you'll gain practical experience in handling molecular data, extracting meaningful features, leveraging molecular similarity for drug discovery tasks, and exploring scaffold hopping techniques. The notebook provides code examples and exercises to reinforce the concepts covered in this topic.</p>
+<p>Understanding molecular representation, descriptors, similarity measures, and scaffold hopping techniques is crucial for navigating the vast chemical space and identifying promising drug candidates. By leveraging these computational tools and approaches, researchers can efficiently explore and prioritize compounds, leading to the discovery of novel and effective therapeutic agents.</p>
+<p>It's important to note that the success of molecular representation, similarity measures, and scaffold hopping in drug discovery relies on the quality and diversity of the available molecular data. Curating large and diverse compound libraries, as well as integrating data from various sources, such as high-throughput screening, literature, and patents, is crucial for building robust models and making informed decisions. Additionally, the interpretation and validation of the results obtained from these computational methods require close collaboration between computational scientists and medicinal chemists to ensure the biological relevance and feasibility of the proposed compounds.</p>
+<p>In the next topic, we will delve into the concept of chemical space and compound libraries, further expanding our knowledge of drug discovery. We will explore the vastness and diversity of chemical space, understand the importance of compound libraries, and learn about strategies for designing and selecting compounds for drug discovery projects.</p>
 <h3>Additional Resources</h3>
 <ul>
     <li><a href="https://jcheminf.biomedcentral.com/articles/10.1186/s13321-015-0069-3" target="_blank">Molecular representations in AI-driven drug discovery: A review and practical guide</a></li>

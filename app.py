@@ -9,7 +9,7 @@ from modules.module6.routes import module6
 from modules.module7.routes import module7
 from modules.chatbot import chatbot_bp
 
-from utils import register_context_processors
+from navutils import register_context_processors
 
 
 app = Flask(__name__)

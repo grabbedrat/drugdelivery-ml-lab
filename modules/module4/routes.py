@@ -2,20 +2,6 @@ from flask import Blueprint, render_template, request, jsonify
 
 module4 = Blueprint('module4', __name__, url_prefix='/module4')
 
-# Define the module structure
-module4_structure = {
-    'name': 'Module 4: Ligand-Based Drug Design',
-    'home_url': 'module4.module4_home',
-    'topics': [
-        {'name': 'Pharmacophore Modeling and its Applications', 'url': 'module4.topic1'},
-        {'name': 'Quantitative Structure-Activity Relationship (QSAR) Modeling', 'url': 'module4.topic2'},
-        {'name': 'Similarity Searching and Clustering in Ligand-Based Design', 'url': 'module4.topic3'},
-        {'name': 'Integration of Ligand and Structure-Based Approaches', 'url': 'module4.topic4'},
-    ],
-    'case_study': {'name': 'Case Study: Designing Potent and Selective GPCR Ligands', 'url': 'module4.case_study'},
-    'mini_project': {'name': 'Mini-Project: Ligand-Based Virtual Screening and Optimization', 'url': 'module4.mini_project'}
-}
-
 @module4.route('/topic1')
 def topic1():
     return render_template('module4/topic1.html')

@@ -223,12 +223,14 @@ footer {
   border-radius: 4px;
   margin-left: 20px;
   margin-bottom: 20px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .sidebar h4 {
   margin-top: 0;
   font-size: 18px;
   font-weight: bold;
+  color: #16a085;
 }
 
 .sidebar ul {
@@ -238,4 +240,28 @@ footer {
 
 .sidebar li {
   margin-bottom: 10px;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 40px;
+  padding-top: 20px;
+  border-top: 1px solid #ddd;
+}
+
+.previous-button,
+.next-button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #16a085;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s;
+}
+
+.previous-button:hover,
+.next-button:hover {
+  background-color: #138a72;
 }

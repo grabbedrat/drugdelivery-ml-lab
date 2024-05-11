@@ -213,3 +213,29 @@ footer {
 .toggle-button:hover {
   background-color: #ddd;
 }
+
+.sidebar {
+  float: right;
+  width: 30%;
+  padding: 20px;
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+}
+
+.sidebar h4 {
+  margin-top: 0;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.sidebar ul {
+  margin-left: 20px;
+  padding-left: 0;
+}
+
+.sidebar li {
+  margin-bottom: 10px;
+}
